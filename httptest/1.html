@@ -1,0 +1,2756 @@
+
+
+<html lang="en-us">
+
+<head>
+     <meta name="description" content="Extension&#32;for&#32;Visual&#32;Studio&#32;Code&#32;-&#32;Vim&#32;emulation&#32;for&#32;Visual&#32;Studio&#32;Code" /><meta name="keywords" content="__ext_vim,__ext_vimrc,__web_extension,keybindings,vi,vim,Vimscript,vscodevim" /><meta property="og:title" content="Vim&#32;-&#32;Visual&#32;Studio&#32;Marketplace" /><meta property="og:type" content="website" /><meta property="og:url" content="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim" /><meta property="og:image" content="https://vscodevim.gallerycdn.vsassets.io/extensions/vscodevim/vim/1.29.0/1733360064585/Microsoft.VisualStudio.Services.Icons.Default" /><meta property="og:description" content="Extension&#32;for&#32;Visual&#32;Studio&#32;Code&#32;-&#32;Vim&#32;emulation&#32;for&#32;Visual&#32;Studio&#32;Code" /><meta property="twitter:card" content="summary" /><meta property="twitter:site" content="@Code" /><link rel="canonical" href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim" />
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+        body {
+            font-family: wf_segoe-ui, Helvetica Neue, Helvetica, Arial, Verdana;
+        	color: rgba( 0, 0, 0, 1);
+        	font-size: 12px;
+        	background-color: rgba(255, 255, 255, 1);
+        	margin: 0;
+        	padding: 0;
+        }
+
+/* L0 header styles start*/
+        .uxservices-header {
+            height: 34px;
+            background-color:black;
+        }
+
+        a.skip-main {
+            left: -999px;
+            position: absolute;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: -999;
+        }
+
+        a.skip-main:focus, a.skip-main:active {
+            color: #0078D4;
+            background-color: #FFFFFF;
+            position: absolute;
+            left: auto;
+            top: auto;
+            width: 122px;
+            height: 33px;
+            overflow: auto;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-top: 7px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Segoe UI';
+            line-height: 20px;
+            z-index: 999;
+        }
+
+        a.skip-main:hover {
+            color: #005BA1;
+            background-color: #F2F2F2;
+        }
+
+        .uxservices-header div.upperBandContent {
+            background-color:black;
+            color: white;
+            line-height: 17px;
+            width:100%;
+            margin:0 auto;
+            box-sizing:border-box;
+            max-width: 1160px;
+            padding: 0px;
+        }
+
+        .uxservices-header div.upperBandContent .left {
+            padding: 5px 0 0 0;
+        }
+
+        .uxservices-header div.upperBandContent .left .vs-logo-header {
+            height: 31px;
+            padding-top: 5px;
+        }
+
+        .uxservices-header div.upperBandContent .left .marketplacetext-header {
+            vertical-align: 9px;
+            padding-top: 5px;
+        }
+
+        .uxservices-header div.upperBandContent .right {
+            display: inline-block;
+            position: relative;
+            background-color: black;
+            font-size: 11px;
+            padding-top: 10px;
+        }
+
+        .uxservices-header div.upperBandContent .right .signIn {
+            font-weight: 600;
+            float: left;
+        }
+
+        .uxservices-header .marketPlaceLogoLink {
+            white-space: pre;
+            font-size: 16px;
+            line-height: 16px;
+            vertical-align: -4px;
+            display: inline-block;
+            color: white;
+        }
+
+        .uxservices-header .marketPlaceLogoLink.vs-brand-icon {
+            width: 30px;
+            height: 30px;
+            background: url(https://cdn.vsassets.io/v/M246_20241014.9/_content/Header/ImageSprite.png) no-repeat -250px 0 !important;
+        }
+
+        .uxservices-header .right a {
+            font-family: wf_segoe-ui, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Helvetica Neue", "Lucida Grande", sans-serif;
+            font-size: inherit;
+        }
+
+        .uxservices-header div.upperBandContent .scarabLink {
+            margin-right: 0.23em;
+        }
+
+        #Fragment_SearchBox {
+            display: inline-block;
+            margin-left: 25px;
+            height: 13px;
+        }
+
+        #Fragment_SearchBox .header-search-button {
+            height: 20px;
+            width: 20px;
+            background: url(https://cdn.vsassets.io/v/M246_20241014.9/_content/Header/ImageSprite.png) no-repeat -195px 0 !important;
+            cursor: pointer;
+            border: none;
+            margin-left: 3px;
+            padding: 0px;
+        }
+
+        #Fragment_SearchBox .header-search-button:focus {
+            outline-color: rgb(77, 144, 254);
+            outline-style: auto;
+            outline-width: 5px;
+        }
+
+        #Fragment_SearchBox .header-search-textbox {
+            vertical-align: top;
+            background-color: #6a6a6a;
+            color: #ffffff;
+            padding-left: 2px;
+        }
+
+        
+/* l0 header ends*/
+
+        .tab {
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+            background-color: transparent;
+            margin-bottom: 25px;
+        }
+
+/* Style the buttons that are used to open the tab content */
+        .tab button {
+            background-color: transparent;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0px 16px;
+            font-size: 16px;
+            height: 40px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: transparent
+        }
+
+/* Change background color of buttons on hover */
+        .tab button:hover {
+            color: #106ebe;
+        }
+
+        .tab button.selected {
+            color: #106ebe;
+            border-bottom: 2px solid #106ebe;
+        }
+
+        .tab button:focus, .tab button.selected:focus {
+            border-color: #000000;
+        }
+
+/* Style the tab content */
+        .tabcontent {
+            padding: 6px 12px;
+        }
+
+        .bowtie-icon,
+        i.bowtie-icon {
+        	font-family: "Bowtie";
+        	font-size: 14px;
+        	speak: none;
+        	display: inline-block;
+        	font-style: normal;
+        	font-weight: normal;
+        	font-variant: normal;
+        	text-transform: none;
+        	text-align: center;
+        	text-decoration: none;
+        	line-height: 16px;
+        	-webkit-font-smoothing: antialiased;
+        	-moz-osx-font-smoothing: grayscale;
+        }
+
+        .bowtie-icon:disabled,
+        i.bowtie-icon:disabled {
+        	opacity: 0.5;
+        }
+
+        .bowtie-brand-visualstudio::before {
+	        content: "\E91D";
+        }
+
+        .bowtie-install::before {
+        	content: "\E92C";
+        }
+
+        .bowtie-search::before {
+        	content: "\E986";
+        }
+
+        .bowtie-navigate-external::before {
+        	content: "\E9D0";
+        }
+
+        .bowtie-status-info::before {
+        	content: "\EA08";
+        }
+
+        .bowtie-status-info {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-background, rgba(0, 120, 212, 1));
+        }
+
+        * {
+        	box-sizing: border-box;
+        	-webkit-box-sizing: border-box;
+        	-moz-box-sizing: border-box;
+        }
+
+        a:not(.ms-Button) {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-foreground, rgba(0, 120, 212, 1));
+        	text-decoration: none;
+        	cursor: pointer;
+        }
+
+        a:not(.ms-Button):hover {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-foreground, rgba(0, 120, 212, 1));
+        	text-decoration: underline;
+        }
+
+        a:not(.ms-Button):visited {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-foreground, rgba(0, 120, 212, 1));
+        }
+
+        a:not(.ms-Button):active {
+        	color: rgba(0, 120, 212, 1);
+        	color: var(--communication-foreground, rgba(0, 120, 212, 1));
+        }
+
+        button {
+        	font-family: "Segoe UI VSS (Regular)", "Segoe UI", "-apple-system", BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Ubuntu, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        	height: 30px;
+        	border: 1px solid;
+        	border-color: rgba( 200, 200, 200, 1);
+        	border-color: rgba( var(--palette-neutral-20, 200, 200, 200), 1);
+        	background-color: rgba( 248, 248, 248, 1);
+        	background-color: rgba( var(--palette-neutral-2, 248, 248, 248), 1);
+        	color: rgba( 51, 51, 51, 1);
+        	color: rgba( var(--palette-neutral-80, 51, 51, 51), 1);
+        	cursor: pointer;
+        	outline: 0;
+        	padding: 2px 12px 2px 12px;
+        }
+
+        button:hover:not(.ms-Button):not(.bolt-button):not(.link-as-button),
+        button:focus:not(.ms-Button):not(.bolt-button):not(.link-as-button) {
+        	border-color: rgba( 166, 166, 166, 1);
+        	border-color: rgba( var(--palette-neutral-30, 166, 166, 166), 1);
+            border-style: dotted;
+        }
+
+        .pricingTab-loader-container, .qnaTab-loader-container, .rnrTab-loader-container, .versionHistoryTab-loader-container {
+            text-align: center;
+        }
+
+        .pricingTab-loader-container .loader, .qnaTab-loader-container .loader, .rnrTab-loader-container .loader, .versionHistoryTab-loader-container .loader {
+            display: inline-block;
+        }
+        .item-details-control-root .ux-section-resources ul li a {
+            text-decoration:underline!important;
+        }
+/* Styles for bread crumb */
+        .bread-crumb-container {
+        	font-size: 13px;
+        	color: #FFFFFF;
+        	height: 45px;
+        	line-height: 45px;
+        }
+
+        .bread-crumb-container .member {
+        	text-decoration: none;
+        }
+
+        .bread-crumb-container .separator {
+        	padding: 0 5px;
+        }
+
+        .bread-crumb-container a:visited {
+        	color: #FFFFFF;
+        }
+
+        .bread-crumb-container a {
+        	color: #FFFFFF;
+        }
+
+        .bread-crumb-container a:hover {
+        	color: #FFFFFF;
+        }
+
+        .item-details-control-root .breadcrumb {
+        	background-color: #232323;
+        	color: #FFFFFF;
+        	line-height: 45px;
+        	font-size: 13px;
+        	/* min-width: 1250px; */
+        }
+
+        .item-details-control-root .breadcrumb .vsCodeDownloadLinkContainer {
+            float: right;
+            color: inherit;
+        }
+
+        .item-details-control-root .breadcrumb .vsCodeDownloadLink {
+            color: #0090ff;
+        }
+
+/* end of bread crumb styles */
+
+/* Styles for item banner */
+        .ux-section-banner {
+        	padding: 16px 0px;
+        	background-color: #eff1f3;
+        	/* min-width: 1250px; */
+        }
+
+        .item-details-control-root .ux-section-banner {
+        	padding: 32px 0px;
+        	background-color: #eff1f3;
+        }
+
+        .gallery-centered-content {
+        	width: 1160px;
+        	margin-left: auto;
+        	margin-right: auto;
+        	padding-left: 10px;
+        	padding-right: 10px;
+        }
+      @media all and (max-width:1165px){
+            .gallery-centered-content{
+                width:100%;
+                padding-left:25px;
+                padding-right:25px;
+            }
+        }
+        table {
+        	border-collapse: collapse;
+        	border-spacing: 0;
+        	margin: 0;
+        	padding: 0;
+        	border: 0;
+        }
+
+        .item-details-control-root .item-img {
+        	text-align: center;
+        	vertical-align: top;
+        	width: 132px;
+        }
+
+        .item-details-control-root .item-img img {
+        	max-width: 128px;
+        	position: relative;
+        	visibility: hidden;
+        }
+
+        .item-details-control-root .item-header .item-header-content {
+        	font-size: 14px;
+        	margin-left: 32px;
+        }
+
+        .item-details-control-root .ux-item-name {
+        	font-size: 26px;
+        	font-weight: 600;
+        	display: inline-block;
+        	padding-right: 8px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper {
+        	margin-top: 4px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper>div {
+        	display: inline-block;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper>div:nth-child(1) {
+        	margin-right: 10px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper>.ux-item-rating {
+        	margin-left: 10px;
+        	margin-right: 10px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper>.item-price-category {
+        	margin-left: 10px;
+        	margin-right: 10px;
+        }
+
+        .item-details-control-root .item-header h1,
+        .item-details-control-root .item-header h2 {
+        	margin: 0px;
+        	padding: 0px;
+        	display: inline-block;
+        	font-size: 0em;
+        	font-weight: normal;
+        }
+
+        .item-details-control-root .item-header .dark {
+        	color: #FFFFFF;
+        }
+
+        .item-details-control-root .ux-item-rating {
+        	font-size: 14px;
+        }
+        .item-details-control-root .ux-item-publisher {
+        	font-size: 18px;
+        }
+
+        .item-details-control-root .ux-item-publisher-link {
+        	font-size: 18px;
+        	font-weight: 600;
+        }
+
+        .item-details-control-root .ux-item-shortdesc {
+        	margin: 20px 0;
+        	max-width: 608px;
+        	line-height: 1.5;
+        	overflow: hidden;
+        }
+
+        .item-details-control-root .dark .item-banner-focussable-child-item:focus {
+        	outline: 1px dotted white;
+        }
+
+        .item-details-control-root .item-header .item-header-content.light .installHelpInfo a {
+            color: #000000;
+            text-decoration: underline;
+            border-color: #000000;
+        }
+
+        .item-details-control-root .item-header .item-header-content.dark .installHelpInfo a {
+        	color: #FFFFFF;
+        	text-decoration: underline;
+        }
+
+        .ux-section-details-tabs .version-history-top-container {
+            width: 100%
+        }
+
+/* not unpublished */
+        
+            .item-details-control-root .ux-button.install {
+                position: relative;
+                font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+                -webkit-font-smoothing: antialiased;
+                font-size: 14px;
+                font-weight: 400;
+                box-sizing: border-box;
+                display: inline-block;
+                text-align: center;
+                cursor: pointer;
+                vertical-align: top;
+                padding-top: 0px;
+                padding-right: 16px;
+                padding-bottom: 0px;
+                padding-left: 16px;
+                min-width: 80px;
+                height: 32px;
+                background-color: rgb(244, 244, 244);
+                color: rgb(51, 51, 51);
+                user-select: none;
+                outline: transparent;
+                border-width: 1px;
+                border-style: solid;
+                border-color: transparent;
+                border-image: initial;
+                text-decoration: none;
+                border-radius: 0px;
+            }
+
+            .item-details-control-root .item-header-content .install-button-container .ux-button.install.buttonDisabled {
+                background-color: #AAAAAA;
+                color: #EEEEEE;
+                opacity: 1;
+                border: 1px solid #E6E6E6;
+            }
+
+            .item-details-control-root .item-header-content .install-button-container .ux-button.install.buttonDisabled:hover {
+                cursor: default;
+                opacity: 1;
+            }
+
+            .item-details-control-root .dark .ux-button.install {
+                background-color: #107c10;
+                color: #FFFFFF;
+                min-width: 120px;
+                border: 1px solid #FFFFFF;
+            }
+
+            .item-details-control-root .dark .ux-button.install:hover {
+                background-color: #AAAAAA;
+                opacity: 0.6;
+            }
+
+            .ux-item-action a.install-button-container {
+                line-height: 32px;
+            }
+
+            .item-details-control-root .light .ux-button.install {
+                background-color: #107c10;
+                color: #FFFFFF;
+                min-width: 120px;
+                border: 1px solid #666666;
+            }
+
+            .item-details-control-root .light .ux-button.install:hover,
+            .item-details-control-root .light .ux-button.install:focus {
+                background-color: #074507;
+            }
+
+            .item-details-control-root .dark .ux-button.install:focus,
+            .item-details-control-root .light .ux-button.install:focus {
+                border: 1px dotted;
+            }
+
+        
+            .vscode-install-title {
+                font-size: 16px;
+                font-weight: bold;
+                padding: 5px 0px;
+            }
+
+            .vscode-install-info-container {
+                font-size: 13px;
+                padding-top: 4px;
+            }
+
+            .vscode-command-container {
+                height: 35px;
+                padding: 1px 0px;
+                float: left;
+            }
+
+            .vscode-command-input {
+                padding: 2px;
+                height: 100%;
+                padding-left: 9px;
+                padding-right: 9px;
+                font-family: monospace;
+                border: 1px solid #a9a9a9;
+                float: left;
+                text-overflow: ellipsis;
+            }
+
+            .copy-to-clipboard-button {
+                height: 100%;
+                padding: 2px 14px 4px 14px;
+                margin-left: -1px;
+                border: 1px solid #a9a9a9;
+                border-radius: 0px;
+                float: left;
+                cursor: pointer;
+            }
+
+            .light .copy-to-clipboard-button:focus {
+                outline: 1px dotted #666;
+            }
+
+            .dark .copy-to-clipboard-button:focus {
+                outline: 1px dotted white;
+            }
+
+            .copied-display-div {
+                font-size: 11px;
+                background-color: #000000;
+                padding: 2px 4px;
+                color: #ffffff;
+                text-align: center;
+                border-radius: 5px;
+                border: 1px solid #ffffff;
+                width: 120px;
+                display: none;
+                position: absolute;
+                top: 35px;
+                right: -50px;
+            }
+
+            .copied-display-container {
+                float: left;
+                position: relative;
+            }
+
+            .vscode-moreinformation {
+                border-left: 1px solid;
+                margin-left: 15px;
+                padding-left: 10px;
+                float: left;
+                margin-top: 9px;
+            }
+
+            .vscode-moreinformation.dark {
+                color: inherit;
+                text-decoration: underline;
+            }
+
+            .vscode-moreinformation.light {
+                color: #007acc;
+                border-color: #000000;
+            }
+        
+/* End of item banner styles. */
+
+/* Styles for item details overview */
+        .item-details-control-root .ux-section-details {
+        	margin: 24px 0 34px 0px;
+        	font-size: 13px;
+        }
+
+        .item-details-control-root .ux-section-details .itemdetails-section-header {
+        	font-size: 16px;
+        	font-weight: bold;
+        	color: #555;
+        	padding-bottom: 16px;
+        }
+
+        .item-details-control-root .ux-section-details .ux-section-details-table {
+        	width: 100%;
+        	table-layout: fixed;
+        }
+
+        .item-details-control-root .ux-itemdetails-left {
+        	vertical-align: top;
+        	font-size: 14px;
+        	padding-right: 20px;
+        }
+
+        .item-details-control-root .ux-itemdetails-right {
+            width: 34.45%;
+            vertical-align: top;
+            padding: 0 0 0 20px;
+        }
+  @media all and (max-width:768px) {
+    .item-details-control-root .ux-itemdetails-left {
+        float: left;
+        width: 100%;
+        padding-right: 0px;
+    }
+    .item-details-control-root .ux-itemdetails-right{
+        padding-left:0px!important;
+        float:left;
+        width:100%;
+    }
+}
+
+        .item-details-control-root .itemDetails-right {
+            display: none;
+        }
+
+        .item-details-control-root .markdown {
+        	color: #222;
+        	line-height: 1.6;
+        	position: relative;
+        }
+
+        .gallery-centered-content .markdown a {
+            color: rgba(0, 120, 212, 1);
+            text-decoration:underline;
+        }
+
+        .markdown table tr:nth-child(2n) a, .gallery-centered-content .markdown a code {
+            color: rgb(15, 113, 196);
+        }
+
+        .item-details-control-root .markdown > *:first-child {
+        	margin-top: 0!important;
+        }
+
+        .item-details-control-root .markdown .link-header:target:before {
+        	content: "";
+        	display: block;
+        	height: 250px;
+        	margin: -250px 0 0;
+        }
+
+        .link-as-button {
+        	height: initial;
+        }
+
+        .link-as-button:hover {
+        	text-decoration: underline;
+        }
+
+        /* End of item details overview styles. */
+
+        /* Styles for footer */
+        #ux-footer {
+        	line-height: 1.2em;
+        }
+
+        #ux-footer:after {
+        	content: "";
+        	display: table;
+        	clear: both;
+        }
+
+        #ux-footer a {
+        	color: #595958;
+        }
+
+        #ux-footer a:hover {
+        	color: #3399ff;
+        }
+
+        #ux-footer ul.links {
+        	padding: 0;
+        	line-height: 1.2em;
+        }
+
+        #ux-footer .linkList>ul>li {
+        	list-style-type: none;
+        	background: none;
+        	padding: 4px 0;
+        	margin: 0;
+        }
+
+        #ux-footer #baseFooter {
+        	width: 1160px; 
+        	padding: 15px 10px;
+        	margin: 0 auto;
+        }
+        @media all and (max-width:1165px){
+            #ux-footer #baseFooter{
+                width:100%;
+                padding:15px 20px;
+            }
+        }
+        #ux-footer #baseFooter:after {
+        	content: "";
+        	display: table;
+        	clear: both;
+        }
+
+        #ux-footer #baseFooter li {
+        	display: inline-block;
+        	list-style-type: none;
+        	margin: 0 15px 0 0;
+        }
+
+        #ux-footer #baseFooter #Fragment_BaseFooterLinks {
+        	text-align: right;
+        }
+
+        #ux-footer #baseFooter #rightBaseFooter {
+        	float: right;
+        	width: 18%;
+        	font-family: wf_segoe-ui, Tahoma, Helvetica, Sans-Serif;
+        	color: #595958;
+        	font-weight: bold;
+        }
+
+        @media only screen and (max-width: 400px) {
+            #ux-footer #baseFooter #rightBaseFooter{
+                width:100%;
+                text-align: center;
+            }
+            .ux-section-banner td.item-img img {
+                width: 100% !important;
+            }
+        }
+
+        #ux-footer span.microsoftLogo {
+        	display: inline-block;
+        	margin-left: 16px;
+        }
+
+        .microsoftLogo {
+        	background: url(https://cdn.vsassets.io/v/M246_20241014.9/_content/Header/ImageSprite.png) no-repeat -93px 0!important;
+        }
+
+        .microsoftLogo {
+        	width: 70px;
+        	height: 14px;
+        	overflow: hidden;
+        }
+
+        /* End of footer styles. */
+
+        /* Styles for markdown */
+        .markdown img {
+        	max-width: 100%;
+        }
+
+        .markdown video {
+            max-width: 100%;
+        }
+
+        .markdown h1,
+        .markdown h2 {
+        	line-height: 1.4;
+        	margin-top: 1em;
+        	margin-bottom: 16px;
+        }
+
+        .markdown h1 {
+        	font-size: 1.5em;
+        	line-height: 1.2em;
+        	border-bottom: 1px solid #eee;
+        	margin-top: 2em;
+        	padding-bottom: 10px;
+        }
+
+        .markdown h2 {
+        	font-size: 1.375em;
+        	line-height: 1.2em;
+        	border-bottom: 1px solid #eee;
+        	margin-top: 2em;
+        	padding-bottom: 10px;
+        }
+
+        .markdown h3 {
+        	font-size: 1.25em;
+        }
+
+        .markdown h4 {
+        	font-size: 1.125em;
+        }
+
+        .markdown h5 {
+        	font-size: 1.0em;
+        }
+
+        .markdown blockquote {
+            padding: 0 15px;
+            color: #777;
+            border-left: 4px solid #ddd;
+            margin: 0;
+        }
+
+        .markdown pre {
+            padding: 16px;
+            overflow: auto;
+            font-size: 85%;
+            line-height: 1.45;
+            background-color: #f7f7f7;
+            border-radius: 3px;
+            word-wrap: normal;
+            font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+
+        .markdown code, .markdown tt {
+        	padding: 0;
+        	background-color: rgba(0, 0, 0, 0.04);
+        	margin: 0;
+        	padding-top: 0.2em;
+        	padding-bottom: 0.2em;
+        	border-radius: 3px;
+        	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        }
+
+        .markdown pre > code {
+            background-color: inherit;
+        }
+
+        .markdown table {
+        	display: block;
+        	width: 100%;
+        	overflow: auto;
+        	word-break: normal;
+        	word-break: keep-all;
+        }
+
+        .markdown table th {
+        	font-weight: bold;
+        }
+
+        .markdown table th,
+        .markdown table td {
+        	padding: 6px 13px;
+        	border: 1px solid #ddd;
+        }
+
+        .markdown table tr {
+        	background-color: #fff;
+        	border-top: 1px solid #ccc;
+        }
+
+        .markdown table tr:nth-child(2n) {
+        	background-color: #f8f8f8;
+        }
+
+        /* End of markdown styles. */
+
+        .main-content.item-details-main-content {
+        	min-height: 950px;
+        }
+
+        .item-details-main-content {
+        	background-color: #FFFFFF;
+        }
+
+        .ms-Fabric {
+        	-moz-osx-font-smoothing: grayscale;
+        	-webkit-font-smoothing: antialiased;
+        	color: #333333;
+        	font-family: "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+        	font-size: 14px;
+        }
+
+        .ms-Fabric button {
+        	font-family: inherit;
+        }
+
+        .ux-section-details-tabs {
+            margin-top: -20px;
+        }
+
+         @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot");
+        	src: local("Segoe UI Light"), local("Segoe Light"), local("Segoe WP Light"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf") format("truetype");
+        	font-weight: 200;
+        	font-style: normal;
+        	-webkit-font-smoothing: antialiased;
+        }
+
+        #survey-container {
+            position: relative;
+            background-color: #f5ebc5;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        #survey-content-container {
+            margin: 0;
+            padding-left: 5%;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left:30%;
+            padding-right:15%;
+        }
+
+        #survey-content-text {
+            color: #000000 !important;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0;
+            font-family: Segoe UI, SegoeUI, Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 16px;
+        }
+
+        #survey-info-icon {
+            display: table-cell;
+            padding: 4px;
+            width: 24px;
+            height: 24px;
+            line-height: 0;
+            text-align: left;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.eot");
+        	src: local("Segoe UI Semilight"), local("Segoe Semilight"), local("Segoe WP Semilight"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf") format("truetype");
+        	font-weight: 300;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.eot");
+        	src: local("Segoe UI"), local("Segoe"), local("Segoe WP"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf") format("truetype");
+        	font-weight: normal;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.eot");
+        	src: local("Segoe UI Semibold"), local("Segoe Semibold"), local("Segoe WP Semibold"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.ttf") format("truetype");
+        	font-weight: 500;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.eot");
+        	src: local("Segoe UI Semibold"), local("Segoe Semibold"), local("Segoe WP Semibold"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/Semibold/latest.ttf") format("truetype");
+        	font-weight: 600;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.eot");
+        	src: local("Segoe UI Bold"), local("Segoe Bold"), local("Segoe WP Bold"), local("Segoe UI"), local("Segoe"), local("Segoe WP"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf") format("truetype");
+        	font-weight: bold;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: wf_segoe-ui_light;
+        	src: url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot");
+        	src: local("Segoe UI Light"), local("Segoe Light"), local("Segoe WP Light"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.eot?#iefix") format("embedded-opentype"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2") format("woff2"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff") format("woff"), url("//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf") format("truetype");
+        	font-weight: normal;
+        	font-style: normal;
+        }
+
+        @font-face {
+        	font-family: 'bowtie';
+        	font-style: normal;
+        	font-weight: normal;
+        	src: url(https://cdn.vsassets.io/v/M246_20241014.9/_content/Fonts/Icons/bowtie.eot);
+        	src: url(https://cdn.vsassets.io/v/M246_20241014.9/_content/Fonts/Icons/bowtie.eot?iefix) format("embedded-opentype"), url(https://cdn.vsassets.io/v/M246_20241014.9/_content/Fonts/Icons/bowtie.woff) format("woff"), url(https://cdn.vsassets.io/v/M246_20241014.9/_content/Fonts/Icons/bowtie.svg#bowtie) format("svg");
+        }
+
+        /*Sponsor start*/
+            @font-face {
+                font-family: AzureDevOpsMDL2Assets;
+                src: url(https://cdn.vsassets.io/v/M246_20241014.9/_content/Fonts/Icons/AzDevMDL2.woff) format('woff');
+            }
+            .ux-item-sponsor-text {
+                background-color: #F1F1F1;
+                border: 1px solid #007ACC;
+                color: #000000;
+                padding: 5px 0px 5px 10px;
+            }
+
+            .ux-item-sponsor-heart-icon{
+                color: #B51E78;
+                padding: inherit;
+                padding-left: 6px;
+                font-weight: 600;
+                position: relative;
+                top: 3px;
+            }
+
+            .bowtie-heart-icon::before {
+        	 content: "\EB52";
+             font-family: AzureDevOpsMDL2Assets;
+            }
+
+            .bowtie-heart-icon {
+        	    color: rgba(0, 120, 212, 1);
+        	    color: var(--communication-background, rgba(0, 120, 212, 1));
+            }
+
+           .ux-sponsor-text-icon {
+            padding-left: 6px;
+            padding-right: 6px;
+           }
+
+        /*Sponsor style end*/
+
+        /* Verified Domain style begin */
+        
+        /* Verified Domain style end */
+
+        /* top pub. style begin */
+        
+
+        /* top pub. style end */
+
+        /*rating review style begin*/
+        .item-details-control-root .ux-item-review-rating .ux-item-rating-control .rating-control .star {
+            min-width: 16px;
+            min-height: 16px;
+            height: 12px;
+            width: 12px;
+            padding-top: 0px;
+            margin: 0px 2px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper .ux-item-review-rating-wrapper {
+            text-decoration: none;
+            color: inherit;
+            padding-top: 1px;
+            padding-bottom: 3px;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper .ux-item-review-rating-wrapper .ux-item-review-rating{
+            display: inline-flex;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper .ux-item-review-rating-wrapper .ux-item-review-rating .ux-item-rating-control {
+            margin-left: 10px;
+            top: 2px;
+            position: relative;
+        }
+
+        .item-details-control-root .ux-item-second-row-wrapper .ux-item-review-rating-wrapper .ux-item-review-rating .ux-item-rating-count {
+            margin-left: 5px;
+            font-size: 16px;
+            margin-top: -1px;
+            margin-right: 8px;
+        }
+
+        /*rating review style end*/
+        /*Spinner*/
+        .loader-container {
+            text-align: -webkit-center;
+            text-align: -mozkit-center;
+        }
+
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: solid #808080;
+            width: 30px;
+            height: 30px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 310px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            padding: 0px 0;
+            position: absolute;
+            z-index: 1;
+            top: 1px;
+            right: 100%;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+        .uxservices-header #signIn .tooltip a:focus-within .tooltiptext, .uxservices-header .signIn .tooltip a:focus-within .tooltiptext {
+            visibility: visible;
+        }
+
+        .uxservices-header .tooltip .tooltiptext #copy_button:focus #outInfo {
+            padding: 5px 10px;
+            border: 1px solid #fff !important;
+        }
+
+        .ms-Button-icon.bowtie-icon.bowtie-copy-to-clipboard.icon-64:before{
+            content: "\E8C8";
+            font-family: AzureDevOpsMDL2Assets;
+        }
+
+        </style>
+
+        
+               <script type="text/javascript" src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+        
+
+        <script type="text/javascript"  nonce="dFwHZAwJAvpTWGnDCl9tHQ==">
+            function sue(em, s, l, c, eo){var w=window,p="ue";w[p]=w[p]||[];w[p].push({"em":em,"s":s,"l":l,"c":c,"eo":eo});return false;}
+            window.onerror = sue;
+            
+        isServerSideRendering = function () {
+            try {
+                return !(document !== undefined);
+            }
+            catch (e) {
+                return true;
+            }
+         };
+
+        redirectToNonSSR = function(area) {
+            var fqn = document.getElementById("FQN").value;
+            var galleryUrl = document.getElementById("galleryUrl").value;
+            window.location.assign(window.location.origin + galleryUrl +"items?itemName=" + fqn + "&ssr=false" + area);
+        }
+        
+        hideAndShowTabs = function(tabToShow) {
+            var currentTab = document.getElementsByClassName("selected-tab");
+            currentTab[0].style.display = "none";
+            currentTab[0].classList.remove("selected-tab");
+
+            var selectedTab =  document.getElementById(tabToShow);
+            selectedTab.classList.add("selected-tab");
+            selectedTab.style.display = "block";
+
+            // Changing the button styling for the newly clicked button 
+            var currentTabButton = document.getElementsByClassName("selected");
+            currentTabButton[0].classList.remove("selected");
+
+            var selectedTabButton =  document.getElementById(tabToShow.slice(0, -3));
+            selectedTabButton.classList.add("selected");
+        }
+
+            if (!isServerSideRendering()) {
+                document.addEventListener('DOMContentLoaded', function () {
+                
+                    document.getElementById("overview").addEventListener("click", function (e) {
+                        hideAndShowTabs("overviewTab");
+                    });
+                    
+                    document.getElementById("qna").addEventListener("click", function (e) {
+                        redirectToNonSSR("#qna");
+                    });
+                    
+                    document.getElementById("versionHistory").addEventListener("click", function (e) {
+                        hideAndShowTabs("versionHistoryTab");
+                    });
+                    
+                    document.getElementById("rnr").addEventListener("click", function (e) {
+                        redirectToNonSSR("#review-details");
+                    });
+                    document.getElementById("review-details").addEventListener("click", function (e) {
+                        redirectToNonSSR("#review-details");
+                    });
+                    
+
+                    // add handler for search
+                    document.getElementById("Fragment_SearchBox").addEventListener("submit", function (e) {
+                        e.preventDefault();
+                        var queryText = document.getElementById("header-search-textbox").value;
+                        var galleryUrl = document.getElementById("galleryUrl").value;
+                        var searchTarget = document.getElementById("searchTarget").value;
+                        window.location = window.location.origin + galleryUrl + "search?term=" + queryText + "&target=" + searchTarget;
+                    });
+                    let acqBtn = document.getElementsByClassName("install-button-container");
+                    if (acqBtn && acqBtn[0]) {
+                        acqBtn[0].onclick = function (event) { var w = window, p = "ciEvents"; w[p] = w[p] || []; w[p].push({ "acquisition": true, "event": event }); };
+                    }
+
+                
+
+                });
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                if (document.getElementById("mgtConsentCookie") != null) {
+                    document.getElementById("mgtConsentCookie").addEventListener("click", function (e) {
+                        console.log("from aspx hit.");
+                        manageConsent();
+                    });
+                }                
+            });
+            document.addEventListener('DOMContentLoaded', function () {
+                var h1targetDiv = document.getElementById("overviewTab").getElementsByTagName("h1");
+                for (var i = 0; i < h1targetDiv.length; i++) {
+                    h1targetDiv[i].setAttribute('role', 'heading');
+                    h1targetDiv[i].setAttribute('aria-level', '2');
+                }
+            });
+        </script>
+    <title>
+        Vim - Visual Studio Marketplace
+    </title>
+</head>
+<a href="#start-of-content" class="skip-main">Skip to content</a>
+<body class="platform gallery gallery-page-item-details">
+    <div id="cookie-banner"></div>    
+
+
+    <div class="uxservices-header" role="banner">
+        <div class="upperBandContent">
+            <a href="/" title="|   Marketplace" class="left" >
+                <img class="vs-logo-header" aria-label="Visual Studio logo" src="https://cdn.vsassets.io/v/M246_20241014.9/_content/Header/vs-logo.png"/>
+                <div id="marketPlaceLogoLink" class="marketPlaceLogoLink marketplacetext-header" aria-label="Marketplace logo">|   Marketplace</div>
+            </a>
+            <div class="right" style="float: right;">
+                
+                    <div class="signIn">
+                        
+                            <a href="https://app.vssps.visualstudio.com/_signin?realm=marketplace.visualstudio.com&amp;reply_to=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dvscodevim.vim&amp;redirect=1&amp;context=eyJodCI6MywiaGlkIjoiMjY2M2IxM2YtNTBlMy1hNjU1LWExNTktMjJmNmY0NzI1ZmFiIiwicXMiOnt9LCJyciI6IiIsInZoIjoiIiwiY3YiOiIiLCJjcyI6IiJ90&amp;workflowId=marketplace&amp;wt.mc_id=o~msft~marketplace~signIn#ctx=eyJTaWduSW5Db29raWVEb21haW5zIjpbImh0dHBzOi8vbG9naW4ud2luZG93cy5uZXQiLCJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20iXX01" class="scarabLink" style="margin-left:23px;padding-top:1px;color:#fff;font-weight:400;">
+                                Sign in
+                            </a>
+                        
+                    </div>
+                
+                <form id="Fragment_SearchBox" class="header-search" aria-label="search" role="search" data-fragmentname="SearchBox">
+                    <input id="header-search-textbox" class="header-search-textbox" aria-label="search" max-length="200" type="text" autocomplete="off">
+                    <button id="header-search-button" class="header-search-button" aria-label="search" type="submit"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="skiptarget" id="start-of-content"></div>
+    <div id="react_0HN86S89UH6BO"><div data-reactroot=""><div class="item-details-control-root"><div class="breadcrumb"><div class="gallery-centered-content"><span class="bread-crumb-container"><a class="member" href="/vscode">Visual Studio Code</a><span class="separator">&gt;</span><a class="member" href="/search?sortBy=Installs&amp;category=Keymaps&amp;target=VSCode">Keymaps</a><span class="separator">&gt;</span><span class="member">Vim</span></span><span class="vsCodeDownloadLinkContainer"><span>New to Visual Studio Code?</span> <a class="vsCodeDownloadLink" href="https://go.microsoft.com/fwlink?linkid=846418&amp;pub=vscodevim&amp;ext=vim&amp;utm_source=vsmp&amp;utm_campaign=mpdetails" target="_blank" rel="noreferrer noopener nofollow" aria-label="Get Visual Studio Code Now">Get it now.</a></span></div></div><div class="main-content item-details-main-content" id="vss_1"><div class="item-details-control-root"><div class="ux-item-details"><div class="ux-section-banner" id="section-banner" style="background-color:#e3f4ff"><div class="ux-section-core gallery-centered-content"><table role="presentation"><tbody><tr><td class="item-img" id="vss_2"><img class="image-display" alt="Vim" src="https://vscodevim.gallerycdn.vsassets.io/extensions/vscodevim/vim/1.29.0/1733360064585/Microsoft.VisualStudio.Services.Icons.Default" style="top:0.5px;visibility:visible"/></td><td class="item-header"><div class="item-header-content light"><h1><span class="ux-item-name">Vim</span></h1><div class="ux-item-second-row-wrapper"><div class="ux-item-publisher"><h2 role="presentation"><a class="ux-item-publisher-link item-banner-focussable-child-item" href="publishers/vscodevim" aria-label="More from vscodevim publisher" style="color:#000000">vscodevim</a></h2></div><span class="divider"> | </span><div class="ux-item-rating"><div class="bowtie-icon bowtie-install"></div><span class="installs-text" title="The number of unique installations, not including updates."> 7,117,910 installs</span></div><a id="review-details" href="#review-details" class="ux-item-review-rating-wrapper" aria-label="Average rating: 4.1 out of 5. Navigate to user reviews."><span class="ux-item-review-rating" title="Average rating: 4.1 out of 5"><span class="divider"> | </span><span class="ux-item-rating-control"><span class="rating-control" aria-hidden="true"><img class="star full-star" alt="" aria-label="1 star" src="https://cdn.vsassets.io/v/M246_20241014.9/_content/FullStar.svg"/><img class="star full-star" alt="" aria-label="2 star" src="https://cdn.vsassets.io/v/M246_20241014.9/_content/FullStar.svg"/><img class="star full-star" alt="" aria-label="3 star" src="https://cdn.vsassets.io/v/M246_20241014.9/_content/FullStar.svg"/><img class="star full-star" alt="" aria-label="4 star" src="https://cdn.vsassets.io/v/M246_20241014.9/_content/FullStar.svg"/><img class="star empty-star" alt="" src="https://cdn.vsassets.io/v/M246_20241014.9/_content/EmptyStarDark.svg"/></span></span><span class="ux-item-rating-count"> (<span>376</span>)</span></span></a><span class="divider"> | </span><span class="item-price-category">Free</span></div><div class="ux-item-shortdesc">Vim emulation for Visual Studio Code</div><div class="ux-item-action"><div><div class="vscode-install-title">Installation</div><div id="vscode-install-instructions" class="vscode-install-instructions">Launch VS Code Quick Open (<code>Ctrl+P</code>), paste the following command, and press enter.</div><div class="vscode-install-info-container"><div class="vscode-command-container"><input type="text" class="vscode-command-input" id="vscode-command-input" readonly="" aria-labelledby="vscode-install-instructions" value="ext install vscodevim.vim" size="26"/><button class="copy-to-clipboard-button" id="copy-to-clipboard-button" title="Copy to clipboard">Copy</button></div><div class="copied-display-container"><div class="copied-display-div" id="copied-animation">Copied to clipboard</div></div><a target="_blank" class="vscode-moreinformation light" href="http://go.microsoft.com/fwlink/?LinkID=691811&amp;pub=vscodevim&amp;ext=vim">More Info</a></div></div><div style="display:none"><input type="text" id="FQN" readonly="" value="vscodevim.vim"/><input type="text" id="galleryUrl" readonly="" value="/"/><input type="text" id="searchTarget" readonly="" value="VSCode"/></div></div></div></td></tr></tbody></table></div></div><div class="gallery-centered-content"><div class="ux-section-details"><div class="ms-Fabric ux-section-details-tabs"><div class="gallery-centered-content"><div class="tab"><button id="overview" class="selected">Overview</button><button id="versionHistory">Version History</button><button id="qna">Q &amp; A</button><button id="rnr">Rating &amp; Review</button></div><div class="tabcontent"><div id="overviewTab" class="overview selected-tab"><div class="details-tab itemdetails"><table class="ux-section-details-table" role="presentation"><tbody><tr><td class="ux-itemdetails-left"><div class="itemDetails"><div class="markdown"><h2 align=center><img src="https://raw.githubusercontent.com/VSCodeVim/Vim/master/images/icon.png" height=128><br>VSCodeVim</h2>
+<p align=center><strong>Vim emulation for Visual Studio Code</strong></p>
+
+<p>VSCodeVim is a Vim emulator for <a href="https://code.visualstudio.com/" target=_blank rel="noreferrer noopener nofollow">Visual Studio Code</a>.</p>
+<ul>
+<li>&#128666; For a full list of supported Vim features, please refer to our <a href="https://github.com/VSCodeVim/Vim/blob/HEAD/ROADMAP.md" target=_blank rel="noreferrer noopener nofollow">roadmap</a>.</li>
+<li>&#128195; Our <a href="https://github.com/VSCodeVim/Vim/blob/HEAD/CHANGELOG.md" target=_blank rel="noreferrer noopener nofollow">change log</a> outlines the breaking/major/minor updates between releases.</li>
+<li>Report missing features/bugs on <a href="https://github.com/VSCodeVim/Vim/issues" target=_blank rel="noreferrer noopener nofollow">GitHub</a>.</li>
+</ul>
+<details>
+ <summary><strong>Table of Contents</strong> (click to expand)</summary>
+<ul>
+<li><a href="#-installation" rel="noreferrer noopener nofollow">&#128190; Installation</a>
+<ul>
+<li><a href="#mac" rel="noreferrer noopener nofollow">Mac</a></li>
+<li><a href="#windows" rel="noreferrer noopener nofollow">Windows</a></li>
+</ul>
+</li>
+<li><a href="#%EF%B8%8F-settings" rel="noreferrer noopener nofollow">⚙️ Settings</a>
+<ul>
+<li><a href="#quick-example" rel="noreferrer noopener nofollow">Quick Example</a></li>
+<li><a href="#vscodevim-settings" rel="noreferrer noopener nofollow">VSCodeVim settings</a></li>
+<li><a href="#neovim-integration" rel="noreferrer noopener nofollow">Neovim Integration</a></li>
+<li><a href="#key-remapping" rel="noreferrer noopener nofollow">Key Remapping</a>
+<ul>
+<li><a href="#viminsertmodekeybindingsvimnormalmodekeybindingsvimvisualmodekeybindingsvimoperatorpendingmodekeybindings" rel="noreferrer noopener nofollow"><code>&quot;vim.insertModeKeyBindings&quot;</code>/<code>&quot;vim.normalModeKeyBindings&quot;</code>/<code>&quot;vim.visualModeKeyBindings&quot;</code>/<code>&quot;vim.operatorPendingModeKeyBindings&quot;</code></a></li>
+<li><a href="#viminsertmodekeybindingsnonrecursivenormalmodekeybindingsnonrecursivevisualmodekeybindingsnonrecursiveoperatorpendingmodekeybindingsnonrecursive" rel="noreferrer noopener nofollow"><code>&quot;vim.insertModeKeyBindingsNonRecursive&quot;</code>/<code>&quot;normalModeKeyBindingsNonRecursive&quot;</code>/<code>&quot;visualModeKeyBindingsNonRecursive&quot;</code>/<code>&quot;operatorPendingModeKeyBindingsNonRecursive&quot;</code></a></li>
+<li><a href="#debugging-remappings" rel="noreferrer noopener nofollow">Debugging Remappings</a></li>
+<li><a href="#remapping-more-complex-key-combinations" rel="noreferrer noopener nofollow">Remapping more complex key combinations</a></li>
+</ul>
+</li>
+<li><a href="#vim-modes" rel="noreferrer noopener nofollow">Vim modes</a></li>
+<li><a href="#vim-settings" rel="noreferrer noopener nofollow">Vim settings</a></li>
+</ul>
+</li>
+<li><a href="#vimrc-support" rel="noreferrer noopener nofollow">.vimrc support</a></li>
+<li><a href="#%EF%B8%8F-multi-cursor-mode" rel="noreferrer noopener nofollow">&#128433;️ Multi-Cursor Mode</a></li>
+<li><a href="#-emulated-plugins" rel="noreferrer noopener nofollow">&#128268; Emulated Plugins</a>
+<ul>
+<li><a href="#vim-airline" rel="noreferrer noopener nofollow">vim-airline</a></li>
+<li><a href="#vim-easymotion" rel="noreferrer noopener nofollow">vim-easymotion</a></li>
+<li><a href="#vim-surround" rel="noreferrer noopener nofollow">vim-surround</a></li>
+<li><a href="#vim-commentary" rel="noreferrer noopener nofollow">vim-commentary</a></li>
+<li><a href="#vim-indent-object" rel="noreferrer noopener nofollow">vim-indent-object</a></li>
+<li><a href="#vim-sneak" rel="noreferrer noopener nofollow">vim-sneak</a></li>
+<li><a href="#camelcasemotion" rel="noreferrer noopener nofollow">CamelCaseMotion</a></li>
+<li><a href="#input-method" rel="noreferrer noopener nofollow">Input Method</a></li>
+<li><a href="#replacewithregister" rel="noreferrer noopener nofollow">ReplaceWithRegister</a></li>
+<li><a href="#vim-textobj-entire" rel="noreferrer noopener nofollow">vim-textobj-entire</a></li>
+<li><a href="#vim-textobj-arguments" rel="noreferrer noopener nofollow">vim-textobj-arguments</a></li>
+</ul>
+</li>
+<li><a href="#-vscodevim-tricks" rel="noreferrer noopener nofollow">&#127913; VSCodeVim tricks!</a></li>
+<li><a href="#-faq" rel="noreferrer noopener nofollow">&#128218; F.A.Q.</a></li>
+<li><a href="#%EF%B8%8F-contributing" rel="noreferrer noopener nofollow">❤️ Contributing</a>
+<ul>
+<li><a href="#special-shoutouts-to" rel="noreferrer noopener nofollow">Special shoutouts to:</a></li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id=installation>&#128190; Installation</h2>
+<p>VSCodeVim can be installed via the VS Code <a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim" target=_blank rel="noreferrer noopener nofollow">Marketplace</a>.</p>
+<h3 id=mac>Mac</h3>
+<p>To enable key-repeating, execute the following in your Terminal, log out and back in, and then restart VS Code:</p>
+<pre><code class=language-sh>defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false              # For VS Code
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false      # For VS Code Insider
+defaults write com.vscodium ApplePressAndHoldEnabled -bool false                      # For VS Codium
+defaults write com.microsoft.VSCodeExploration ApplePressAndHoldEnabled -bool false   # For VS Codium Exploration users
+defaults delete -g ApplePressAndHoldEnabled                                           # If necessary, reset global default
+</code></pre>
+<p>We also recommend increasing Key Repeat and Delay Until Repeat settings in <em>System Preferences -&gt; Keyboard</em>.</p>
+<h3 id=windows>Windows</h3>
+<p>Like real vim, VSCodeVim will take over your control keys. This behavior can be adjusted with the <a href="#vscodevim-settings" rel="noreferrer noopener nofollow"><code>useCtrlKeys</code></a> and <a href="#vscodevim-settings" rel="noreferrer noopener nofollow"><code>handleKeys</code></a> settings.</p>
+<h2 id=settings>⚙️ Settings</h2>
+<p>The settings documented here are a subset of the supported settings; the full list is described in the <code>Contributions</code> tab of VSCodeVim's <a href="https://code.visualstudio.com/docs/editor/extension-gallery#_extension-details" target=_blank rel="noreferrer noopener nofollow">extension details page</a>, which can be found in the <a href="https://code.visualstudio.com/docs/editor/extension-gallery" target=_blank rel="noreferrer noopener nofollow">extensions view</a> of VS Code.</p>
+<h3 id=quick-example>Quick Example</h3>
+<p>Below is an example of a <a href="https://code.visualstudio.com/Docs/customization/userandworkspace" target=_blank rel="noreferrer noopener nofollow">settings.json</a> file with settings relevant to VSCodeVim:</p>
+<pre><code class=language-json>{
+  &quot;vim.easymotion&quot;: true,
+  &quot;vim.incsearch&quot;: true,
+  &quot;vim.useSystemClipboard&quot;: true,
+  &quot;vim.useCtrlKeys&quot;: true,
+  &quot;vim.hlsearch&quot;: true,
+  &quot;vim.insertModeKeyBindings&quot;: [
+    {
+      &quot;before&quot;: [&quot;j&quot;, &quot;j&quot;],
+      &quot;after&quot;: [&quot;&lt;Esc&gt;&quot;]
+    }
+  ],
+  &quot;vim.normalModeKeyBindingsNonRecursive&quot;: [
+    {
+      &quot;before&quot;: [&quot;&lt;leader&gt;&quot;, &quot;d&quot;],
+      &quot;after&quot;: [&quot;d&quot;, &quot;d&quot;]
+    },
+    {
+      &quot;before&quot;: [&quot;&lt;C-n&gt;&quot;],
+      &quot;commands&quot;: [&quot;:nohl&quot;]
+    },
+    {
+      &quot;before&quot;: [&quot;K&quot;],
+      &quot;commands&quot;: [&quot;lineBreakInsert&quot;],
+      &quot;silent&quot;: true
+    }
+  ],
+  &quot;vim.leader&quot;: &quot;&lt;space&gt;&quot;,
+  &quot;vim.handleKeys&quot;: {
+    &quot;&lt;C-a&gt;&quot;: false,
+    &quot;&lt;C-f&gt;&quot;: false
+  },
+
+  &quot;// To improve performance&quot;,
+  &quot;extensions.experimental.affinity&quot;: {
+    &quot;vscodevim.vim&quot;: 1
+  }
+}
+</code></pre>
+<h3 id=vscodevim-settings>VSCodeVim settings</h3>
+<p>These settings are specific to VSCodeVim.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim.changeWordIncludesWhitespace</td>
+<td>Include trailing whitespace when changing word. This configures the cw action to act consistently as its siblings (yw and dw) instead of acting as ce.</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.cursorStylePerMode.<em>{Mode}</em></td>
+<td>Configure a specific cursor style for <em>{Mode}</em>. Omitted modes will use <a href="https://github.com/VSCodeVim/Vim/blob/4a6fde6dbd4d1fac1f204c0dc27c32883651ef1a/src/mode/mode.ts#L34" target=_blank rel="noreferrer noopener nofollow">default cursor type</a> Supported cursors: line, block, underline, line-thin, block-outline, and underline-thin.</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr>
+<td>vim.digraphs.<em>{shorthand}</em></td>
+<td>Set custom digraph shorthands that can override the default ones. Entries should map a two-character shorthand to a descriptive string and one or more UTF16 code points. Example: <code>&quot;R!&quot;: [&quot;&#128640;&quot;, [55357, 56960]]</code></td>
+<td>Object</td>
+<td><code>{&quot;R!&quot;: [&quot;&#128640;&quot;, [0xD83D, 0xDE80]]</code></td>
+</tr>
+<tr>
+<td>vim.disableExtension</td>
+<td>Disable VSCodeVim extension. This setting can also be toggled using <code>toggleVim</code> command in the Command Palette</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.handleKeys</td>
+<td>Delegate configured keys to be handled by VS Code instead of by the VSCodeVim extension. Any key in <code>keybindings</code> section of the <a href="https://github.com/VSCodeVim/Vim/blob/master/package.json" target=_blank rel="noreferrer noopener nofollow">package.json</a> that has a <code>vim.use&lt;C-...&gt;</code> in the <code>when</code> argument can be delegated back to VS Code by setting <code>&quot;&lt;C-...&gt;&quot;: false</code>. Example: to use <code>ctrl+f</code> for find (native VS Code behavior): <code>&quot;vim.handleKeys&quot;: { &quot;&lt;C-f&gt;&quot;: false }</code>.</td>
+<td>String</td>
+<td><code>&quot;&lt;C-d&gt;&quot;: true</code><br> <code>&quot;&lt;C-s&gt;&quot;: false</code><br> <code>&quot;&lt;C-z&gt;&quot;: false</code></td>
+</tr>
+<tr>
+<td>vim.overrideCopy</td>
+<td>Override VS Code's copy command with our own, which works correctly with VSCodeVim. If cmd-c/ctrl-c is giving you issues, set this to false and complain <a href="https://github.com/Microsoft/vscode/issues/217" target=_blank rel="noreferrer noopener nofollow">here</a>.</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.useSystemClipboard</td>
+<td>Use the system clipboard register (<code>*</code>) as the default register</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.searchHighlightColor</td>
+<td>Background color of non-current search matches</td>
+<td>String</td>
+<td><code>findMatchHighlightBackground</code> ThemeColor</td>
+</tr>
+<tr>
+<td>vim.searchHighlightTextColor</td>
+<td>Foreground color of non-current search matches</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr>
+<td>vim.searchMatchColor</td>
+<td>Background color of current search match</td>
+<td>String</td>
+<td><code>findMatchBackground</code> ThemeColor</td>
+</tr>
+<tr>
+<td>vim.searchMatchTextColor</td>
+<td>Foreground color of current search match</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr>
+<td>vim.substitutionColor</td>
+<td>Background color of substitution text when <code>vim.inccommand</code> is enabled</td>
+<td>String</td>
+<td>&quot;#50f01080&quot;</td>
+</tr>
+<tr>
+<td>vim.substitutionTextColor</td>
+<td>Foreground color of substitution text when <code>vim.inccommand</code> is enabled</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr>
+<td>vim.startInInsertMode</td>
+<td>Start in Insert mode instead of Normal Mode</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.useCtrlKeys</td>
+<td>Enable Vim ctrl keys overriding common VS Code operations such as copy, paste, find, etc.</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>vim.visualstar</td>
+<td>In visual mode, start a search with <code>*</code> or <code>#</code> using the current selection</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.highlightedyank.enable</td>
+<td>Enable highlighting when yanking</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.highlightedyank.color</td>
+<td>Set the color of yank highlights</td>
+<td>String</td>
+<td>rgba(250, 240, 170, 0.5)</td>
+</tr>
+<tr>
+<td>vim.highlightedyank.duration</td>
+<td>Set the duration of yank highlights</td>
+<td>Number</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<h3 id=neovim-integration>Neovim Integration</h3>
+<blockquote>
+<p>:warning: Experimental feature. Please leave feedback on neovim integration <a href="https://github.com/VSCodeVim/Vim/issues/1735" target=_blank rel="noreferrer noopener nofollow">here</a>.</p>
+</blockquote>
+<p>To leverage neovim for Ex-commands,</p>
+<ol>
+<li>Install <a href="https://github.com/neovim/neovim/wiki/Installing-Neovim" target=_blank rel="noreferrer noopener nofollow">neovim</a></li>
+<li>Modify the following configurations:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim.enableNeovim</td>
+<td>Enable Neovim</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.neovimPath</td>
+<td>Full path to neovim executable. If left empty, PATH environment variable will be automatically checked for neovim path.</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>vim.neovimUseConfigFile</td>
+<td>If <code>true</code>, Neovim will load a config file specified by <code>vim.neovimConfigPath</code>. This is necessary if you want Neovim to be able to use its own plugins.</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.neovimConfigPath</td>
+<td>Path that Neovim will load as config file. If left blank, Neovim will search in its default location.</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Here's some ideas on what you can do with neovim integration:</p>
+<ul>
+<li><a href="http://vim.wikia.com/wiki/Power_of_g" target=_blank rel="noreferrer noopener nofollow">The power of g</a></li>
+<li><a href="https://vi.stackexchange.com/questions/4418/execute-normal-command-over-range" target=_blank rel="noreferrer noopener nofollow">The :normal command</a></li>
+<li>Faster search and replace!</li>
+</ul>
+<h3 id=key-remapping>Key Remapping</h3>
+<p>Custom remappings are defined on a per-mode basis.</p>
+<h4 id="vim.insertmodekeybindingsvim.normalmodekeybindingsvim.visualmodekeybindingsvim.operatorpendingmodekeybindings"><code>&quot;vim.insertModeKeyBindings&quot;</code>/<code>&quot;vim.normalModeKeyBindings&quot;</code>/<code>&quot;vim.visualModeKeyBindings&quot;</code>/<code>&quot;vim.operatorPendingModeKeyBindings&quot;</code></h4>
+<ul>
+<li>Keybinding overrides to use for insert, normal, operatorPending and visual modes.</li>
+<li>Keybinding overrides can include <code>&quot;before&quot;</code>, <code>&quot;after&quot;</code>, <code>&quot;commands&quot;</code>, and <code>&quot;silent&quot;</code>.</li>
+<li>Bind <code>jj</code> to <code>&lt;Esc&gt;</code> in insert mode:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.insertModeKeyBindings&quot;: [
+        {
+            &quot;before&quot;: [&quot;j&quot;, &quot;j&quot;],
+            &quot;after&quot;: [&quot;&lt;Esc&gt;&quot;]
+        }
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>£</code> to goto previous whole word under cursor:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.normalModeKeyBindings&quot;: [
+        {
+            &quot;before&quot;: [&quot;£&quot;],
+            &quot;after&quot;: [&quot;#&quot;]
+        }
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>:</code> to show the command palette, and don't show the message on the status bar:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.normalModeKeyBindings&quot;: [
+        {
+            &quot;before&quot;: [&quot;:&quot;],
+            &quot;commands&quot;: [
+                &quot;workbench.action.showCommands&quot;,
+            ],
+            &quot;silent&quot;: true
+        }
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>&lt;leader&gt;m</code> to add a bookmark and <code>&lt;leader&gt;b</code> to open the list of all bookmarks (using the <a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks" target=_blank rel="noreferrer noopener nofollow">Bookmarks</a> extension):</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.normalModeKeyBindings&quot;: [
+        {
+            &quot;before&quot;: [&quot;&lt;leader&gt;&quot;, &quot;m&quot;],
+            &quot;commands&quot;: [
+                &quot;bookmarks.toggle&quot;
+            ]
+        },
+        {
+            &quot;before&quot;: [&quot;&lt;leader&gt;&quot;, &quot;b&quot;],
+            &quot;commands&quot;: [
+                &quot;bookmarks.list&quot;
+            ]
+        }
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>ctrl+n</code> to turn off search highlighting and <code>&lt;leader&gt;w</code> to save the current file:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.normalModeKeyBindings&quot;: [
+        {
+            &quot;before&quot;:[&quot;&lt;C-n&gt;&quot;],
+            &quot;commands&quot;: [
+                &quot;:nohl&quot;,
+            ]
+        },
+        {
+            &quot;before&quot;: [&quot;leader&quot;, &quot;w&quot;],
+            &quot;commands&quot;: [
+                &quot;workbench.action.files.save&quot;,
+            ]
+        }
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>{</code> to <code>w</code> in operator pending mode makes <code>y{</code> and <code>d{</code> work like <code>yw</code> and <code>dw</code> respectively:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.operatorPendingModeKeyBindings&quot;: [
+        {
+            &quot;before&quot;: [&quot;{&quot;],
+            &quot;after&quot;: [&quot;w&quot;]
+        }
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>L</code> to <code>$</code> and <code>H</code> to <code>^</code> in operator pending mode makes <code>yL</code> and <code>dH</code> work like <code>y$</code> and <code>d^</code> respectively:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.operatorPendingModeKeyBindings&quot;: [
+        {
+            &quot;before&quot;: [&quot;L&quot;],
+            &quot;after&quot;: [&quot;$&quot;]
+        },
+        {
+            &quot;before&quot;: [&quot;H&quot;],
+            &quot;after&quot;: [&quot;^&quot;]
+        }
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>&gt;</code> and <code>&lt;</code> in visual mode to indent/outdent lines (repeatable):</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.visualModeKeyBindings&quot;: [
+        {
+            &quot;before&quot;: [
+                &quot;&gt;&quot;
+            ],
+            &quot;commands&quot;: [
+                &quot;editor.action.indentLines&quot;
+            ]
+        },
+        {
+            &quot;before&quot;: [
+                &quot;&lt;&quot;
+            ],
+            &quot;commands&quot;: [
+                &quot;editor.action.outdentLines&quot;
+            ]
+        },
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>&lt;leader&gt;vim</code> to clone this repository to the selected location:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.visualModeKeyBindings&quot;: [
+        {
+            &quot;before&quot;: [
+                &quot;&lt;leader&gt;&quot;, &quot;v&quot;, &quot;i&quot;, &quot;m&quot;
+            ],
+            &quot;commands&quot;: [
+                {
+                    &quot;command&quot;: &quot;git.clone&quot;,
+                    &quot;args&quot;: [ &quot;https://github.com/VSCodeVim/Vim.git&quot; ]
+                }
+            ]
+        }
+    ]
+</code></pre>
+<h4 id="vim.insertmodekeybindingsnonrecursivenormalmodekeybindingsnonrecursivevisualmodekeybindingsnonrecursiveoperatorpendingmodekeybindingsnonrecursive"><code>&quot;vim.insertModeKeyBindingsNonRecursive&quot;</code>/<code>&quot;normalModeKeyBindingsNonRecursive&quot;</code>/<code>&quot;visualModeKeyBindingsNonRecursive&quot;</code>/<code>&quot;operatorPendingModeKeyBindingsNonRecursive&quot;</code></h4>
+<ul>
+<li>Non-recursive keybinding overrides to use for insert, normal, and visual modes</li>
+<li><em>Example:</em> Exchange the meaning of two keys like <code>j</code> to <code>k</code> and <code>k</code> to <code>j</code> to exchange the cursor up and down commands. Notice that if you attempted this binding normally, the <code>j</code> would be replaced with <code>k</code> and the <code>k</code> would be replaced with <code>j</code>, on and on forever. When this happens 'maxmapdepth' times (default 1000) the error message 'E223 Recursive Mapping' will be thrown. Stop this recursive expansion using the NonRecursive variation of the keybindings:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.normalModeKeyBindingsNonRecursive&quot;: [
+        {
+            &quot;before&quot;: [&quot;j&quot;],
+            &quot;after&quot;: [&quot;k&quot;]
+        },
+        {
+            &quot;before&quot;: [&quot;k&quot;],
+            &quot;after&quot;: [&quot;j&quot;]
+        }
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>(</code> to 'i(' in operator pending mode makes 'y(' and 'c(' work like 'yi(' and 'ci(' respectively:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.operatorPendingModeKeyBindingsNonRecursive&quot;: [
+        {
+            &quot;before&quot;: [&quot;(&quot;],
+            &quot;after&quot;: [&quot;i(&quot;]
+        }
+    ]
+</code></pre>
+<ul>
+<li>Bind <code>p</code> in visual mode to paste without overriding the current register:</li>
+</ul>
+<pre><code class=language-json>    &quot;vim.visualModeKeyBindingsNonRecursive&quot;: [
+        {
+            &quot;before&quot;: [
+                &quot;p&quot;,
+            ],
+            &quot;after&quot;: [
+                &quot;p&quot;,
+                &quot;g&quot;,
+                &quot;v&quot;,
+                &quot;y&quot;
+            ]
+        }
+    ],
+</code></pre>
+<h4 id=debugging-remappings>Debugging Remappings</h4>
+<ol>
+<li><p>Adjust the extension's logging level to 'debug' and open the Output window:</p>
+<ol>
+<li>Run <code>Developer: Set Log Level</code> from the command palette.</li>
+<li>Select <code>Vim</code>, then <code>Debug</code></li>
+<li>Run <code>Developer: Reload window</code></li>
+<li>In the bottom panel, open the <code>Output</code> tab and select <code>Vim</code> from the dropdown selection.</li>
+</ol>
+</li>
+<li><p>Are your configurations correct?</p>
+<p>As each remapped configuration is loaded, it is logged to the Vim Output panel. Do you see any errors?</p>
+<pre><code class=language-console>debug: Remapper: normalModeKeyBindingsNonRecursive. before=0. after=^.
+debug: Remapper: insertModeKeyBindings. before=j,j. after=&lt;Esc&gt;.
+error: Remapper: insertModeKeyBindings. Invalid configuration. Missing 'after' key or 'commands'. before=j,k.
+</code></pre>
+<p>Misconfigured configurations are ignored.</p>
+</li>
+<li><p>Does the extension handle the keys you are trying to remap?</p>
+<p>VSCodeVim explicitly instructs VS Code which key events we care about through the <a href="https://github.com/VSCodeVim/Vim/blob/9bab33c75d0a53873880a79c5d2de41c8be1bef9/package.json#L62" target=_blank rel="noreferrer noopener nofollow">package.json</a>. If the key you are trying to remap is a key in which vim/vscodevim generally does not handle, then it's most likely that this extension does not receive those key events from VS Code. In the Vim Output panel, you should see:</p>
+<pre><code class=language-console>debug: ModeHandler: handling key=A.
+debug: ModeHandler: handling key=l.
+debug: ModeHandler: handling key=&lt;BS&gt;.
+debug: ModeHandler: handling key=&lt;C-a&gt;.
+</code></pre>
+<p>As you press the key that you are trying to remap, do you see it outputted here? If not, it means we don't subscribe to those key events. It is still possible to remap those keys by using VSCode's <a href="https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference" target=_blank rel="noreferrer noopener nofollow">keybindings.json</a> (see next section: <a href="#remapping-more-complex-key-combinations" rel="noreferrer noopener nofollow">Remapping more complex key combinations</a>).</p>
+</li>
+</ol>
+<h4 id=remapping-more-complex-key-combinations>Remapping more complex key combinations</h4>
+<p>It is highly recommended to remap keys using vim commands like <code>&quot;vim.normalModeKeyBindings&quot;</code> (<a href="#key-remapping" rel="noreferrer noopener nofollow">see here</a>). But sometimes the usual remapping commands are not enough as they do not support every key combinations possible (for example <code>Alt+key</code> or <code>Ctrl+Shift+key</code>). In this case it is possible to create new keybindings inside <a href="https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference" target=_blank rel="noreferrer noopener nofollow">keybindings.json</a>. To do so: open up keybindings.json in VSCode using <code>CTRL+SHIFT+P</code> and select <code>Open keyboard shortcuts (JSON)</code>.</p>
+<p>You can then add a new entry to the keybindings like so:</p>
+<pre><code class=language-json>{
+  &quot;key&quot;: &quot;YOUR_KEY_COMBINATION&quot;,
+  &quot;command&quot;: &quot;vim.remap&quot;,
+  &quot;when&quot;: &quot;inputFocus &amp;&amp; vim.mode == 'VIM_MODE_YOU_WANT_TO_REBIND'&quot;,
+  &quot;args&quot;: {
+    &quot;after&quot;: [&quot;YOUR_VIM_ACTION&quot;]
+  }
+}
+</code></pre>
+<p>For example, to rebind <code>ctrl+shift+y</code> to VSCodeVim's <code>yy</code> (yank line) in normal mode, add this to your keybindings.json:</p>
+<pre><code class=language-json>{
+  &quot;key&quot;: &quot;ctrl+shift+y&quot;,
+  &quot;command&quot;: &quot;vim.remap&quot;,
+  &quot;when&quot;: &quot;inputFocus &amp;&amp; vim.mode == 'Normal'&quot;,
+  &quot;args&quot;: {
+    &quot;after&quot;: [&quot;y&quot;, &quot;y&quot;]
+  }
+}
+</code></pre>
+<p>If keybindings.json is empty the first time you open it, make sure to add opening <code>[</code> and closing <code>]</code> square brackets to the file as the keybindings should be inside a JSON Array.</p>
+<h3 id=vim-modes>Vim modes</h3>
+<p>Here are all the modes used by VSCodeVim:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+</tr>
+<tr>
+<td>Insert</td>
+</tr>
+<tr>
+<td>Visual</td>
+</tr>
+<tr>
+<td>VisualBlock</td>
+</tr>
+<tr>
+<td>VisualLine</td>
+</tr>
+<tr>
+<td>SearchInProgressMode</td>
+</tr>
+<tr>
+<td>CommandlineInProgress</td>
+</tr>
+<tr>
+<td>Replace</td>
+</tr>
+<tr>
+<td>EasyMotionMode</td>
+</tr>
+<tr>
+<td>EasyMotionInputMode</td>
+</tr>
+<tr>
+<td>SurroundInputMode</td>
+</tr>
+<tr>
+<td>OperatorPendingMode</td>
+</tr>
+<tr>
+<td>Disabled</td>
+</tr>
+</tbody>
+</table>
+<p>When rebinding keys in <a href="https://code.visualstudio.com/docs/getstarted/keybindings" target=_blank rel="noreferrer noopener nofollow">keybindings.json</a> using <a href="https://code.visualstudio.com/api/references/when-clause-contexts" target=_blank rel="noreferrer noopener nofollow">&quot;when clause context&quot;</a>, it can be useful to know in which mode vim currently is. For example to write a &quot;when clause&quot; that checks if vim is currently in normal mode or visual mode it is possible to write the following:</p>
+<pre><code class=language-json>&quot;when&quot;: &quot;vim.mode == 'Normal' || vim.mode == 'Visual'&quot;,
+</code></pre>
+<h3 id=vim-settings>Vim settings</h3>
+<p>Configuration settings that have been copied from vim. Vim settings are loaded in the following sequence:</p>
+<ol>
+<li><code>:set {setting}</code></li>
+<li><code>vim.{setting}</code> from user/workspace settings.</li>
+<li>VS Code settings</li>
+<li>VSCodeVim default values</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim.autoindent</td>
+<td>Copy indent from current line when starting a new line</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>vim.gdefault</td>
+<td>When on, the <code>:substitute</code> flag <code>g</code> is default on. This means that all matches in a line are substituted instead of one. When a <code>g</code> flag is given to a <code>:substitute</code> command, this will toggle the substitution of all or one match.</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.hlsearch</td>
+<td>Highlights all text matching current search</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.ignorecase</td>
+<td>Ignore case in search patterns</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>vim.incsearch</td>
+<td>Show the next match while entering a search</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>vim.inccommand</td>
+<td>Show the effects of the <code>:substitute</code> command while typing</td>
+<td>String</td>
+<td><code>replace</code></td>
+</tr>
+<tr>
+<td>vim.joinspaces</td>
+<td>Add two spaces after '.', '?', and '!' when joining or reformatting</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>vim.leader</td>
+<td>Defines key for <code>&lt;leader&gt;</code> to be used in key remappings</td>
+<td>String</td>
+<td><code>\</code></td>
+</tr>
+<tr>
+<td>vim.maxmapdepth</td>
+<td>Maximum number of times a mapping is done without resulting in a character to be used. This normally catches endless mappings, like &quot;:map x y&quot; with &quot;:map y x&quot;. It still does not catch &quot;:map g wg&quot;, because the 'w' is used before the next mapping is done.</td>
+<td>Number</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>vim.report</td>
+<td>Threshold for reporting number of lines changed.</td>
+<td>Number</td>
+<td>2</td>
+</tr>
+<tr>
+<td>vim.shell</td>
+<td>Path to the shell to use for <code>!</code> and <code>:!</code> commands.</td>
+<td>String</td>
+<td><code>/bin/sh</code> on Unix, <code>%COMSPEC%</code> environment variable on Windows</td>
+</tr>
+<tr>
+<td>vim.showcmd</td>
+<td>Show (partial) command in status bar</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>vim.showmodename</td>
+<td>Show name of current mode in status bar</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>vim.smartcase</td>
+<td>Override the 'ignorecase' setting if search pattern contains uppercase characters</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>vim.textwidth</td>
+<td>Width to word-wrap when using <code>gq</code></td>
+<td>Number</td>
+<td>80</td>
+</tr>
+<tr>
+<td>vim.timeout</td>
+<td>Timeout in milliseconds for remapped commands</td>
+<td>Number</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>vim.whichwrap</td>
+<td>Allow specified keys that move the cursor left/right to move to the previous/next line when the cursor is on the first/last character in the line. See <a href="https://vimhelp.org/options.txt.html#%27whichwrap%27" target=_blank rel="noreferrer noopener nofollow">:help whichwrap</a>.</td>
+<td>String</td>
+<td><code>b,s</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id=vimrc-support>.vimrc support</h2>
+<blockquote>
+<p>:warning: .vimrc support is currently experimental. Only remaps are supported, and you may experience bugs. Please <a href="https://github.com/VSCodeVim/Vim/issues/new?template=bug_report.md" target=_blank rel="noreferrer noopener nofollow">report them</a>!</p>
+</blockquote>
+<p>Set <code>vim.vimrc.enable</code> to <code>true</code> and set <code>vim.vimrc.path</code> appropriately.</p>
+<h2 id=multi-cursor-mode>&#128433;️ Multi-Cursor Mode</h2>
+<blockquote>
+<p>:warning: Multi-Cursor mode is experimental. Please report issues in our <a href="https://github.com/VSCodeVim/Vim/issues/824" target=_blank rel="noreferrer noopener nofollow">feedback thread.</a></p>
+</blockquote>
+<p>Enter multi-cursor mode by:</p>
+<ul>
+<li>On OSX, <code>cmd-d</code>. On Windows, <code>ctrl-d</code>.</li>
+<li><code>gb</code>, a new shortcut we added which is equivalent to <code>cmd-d</code> (OSX) or <code>ctrl-d</code> (Windows). It adds another cursor at the next word that matches the word the cursor is currently on.</li>
+<li>Running &quot;Add Cursor Above/Below&quot; or the shortcut on any platform.</li>
+</ul>
+<p>Once you have multiple cursors, you should be able to use Vim commands as you see fit. Most should work; some are unsupported (ref <a href="https://github.com/VSCodeVim/Vim/pull/587" target=_blank rel="noreferrer noopener nofollow">PR#587</a>).</p>
+<ul>
+<li>Each cursor has its own clipboard.</li>
+<li>Pressing Escape in Multi-Cursor Visual Mode will bring you to Multi-Cursor Normal mode. Pressing it again will return you to Normal mode.</li>
+</ul>
+<h2 id=emulated-plugins>&#128268; Emulated Plugins</h2>
+<h3 id=vim-airline>vim-airline</h3>
+<blockquote>
+<p>:warning: There are performance implications to using this plugin. In order to change the status bar, we override the configurations in your workspace settings.json which results in increased latency and a constant changing diff in your working directory (see <a href="https://github.com/VSCodeVim/Vim/issues/2124" target=_blank rel="noreferrer noopener nofollow">issue#2124</a>).</p>
+</blockquote>
+<p>Change the color of the status bar based on the current mode. Once enabled, configure <code>&quot;vim.statusBarColors&quot;</code>. Colors can be defined for each mode either as <code>string</code> (background only), or <code>string[]</code> (background, foreground).</p>
+<pre><code class=language-json>    &quot;vim.statusBarColorControl&quot;: true,
+    &quot;vim.statusBarColors.normal&quot;: [&quot;#8FBCBB&quot;, &quot;#434C5E&quot;],
+    &quot;vim.statusBarColors.insert&quot;: &quot;#BF616A&quot;,
+    &quot;vim.statusBarColors.visual&quot;: &quot;#B48EAD&quot;,
+    &quot;vim.statusBarColors.visualline&quot;: &quot;#B48EAD&quot;,
+    &quot;vim.statusBarColors.visualblock&quot;: &quot;#A3BE8C&quot;,
+    &quot;vim.statusBarColors.replace&quot;: &quot;#D08770&quot;,
+    &quot;vim.statusBarColors.commandlineinprogress&quot;: &quot;#007ACC&quot;,
+    &quot;vim.statusBarColors.searchinprogressmode&quot;: &quot;#007ACC&quot;,
+    &quot;vim.statusBarColors.easymotionmode&quot;: &quot;#007ACC&quot;,
+    &quot;vim.statusBarColors.easymotioninputmode&quot;: &quot;#007ACC&quot;,
+    &quot;vim.statusBarColors.surroundinputmode&quot;: &quot;#007ACC&quot;,
+</code></pre>
+<h3 id=vim-easymotion>vim-easymotion</h3>
+<p>Based on <a href="https://github.com/easymotion/vim-easymotion" target=_blank rel="noreferrer noopener nofollow">vim-easymotion</a> and configured through the following settings:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim.easymotion</td>
+<td>Enable/disable easymotion plugin</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.easymotionMarkerBackgroundColor</td>
+<td>The background color of the marker box.</td>
+<td>String</td>
+<td>'#0000'</td>
+</tr>
+<tr>
+<td>vim.easymotionMarkerForegroundColorOneChar</td>
+<td>The font color for one-character markers.</td>
+<td>String</td>
+<td>'#ff0000'</td>
+</tr>
+<tr>
+<td>vim.easymotionMarkerForegroundColorTwoCharFirst</td>
+<td>The font color for the first of two-character markers, used to differentiate from one-character markers.</td>
+<td>String</td>
+<td>'#ffb400'</td>
+</tr>
+<tr>
+<td>vim.easymotionMarkerForegroundColorTwoCharSecond</td>
+<td>The font color for the second of two-character markers, used to differentiate consecutive markers.</td>
+<td>String</td>
+<td>'#b98300'</td>
+</tr>
+<tr>
+<td>vim.easymotionIncSearchForegroundColor</td>
+<td>The font color for the search n-character command, used to highlight the matches.</td>
+<td>String</td>
+<td>'#7fbf00'</td>
+</tr>
+<tr>
+<td>vim.easymotionDimColor</td>
+<td>The font color for the dimmed characters, used when <code>#vim.easymotionDimBackground#</code> is set to true.</td>
+<td>String</td>
+<td>'#777777'</td>
+</tr>
+<tr>
+<td>vim.easymotionDimBackground</td>
+<td>Whether to dim other text while markers are visible.</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+<tr>
+<td>vim.easymotionMarkerFontWeight</td>
+<td>The font weight used for the marker text.</td>
+<td>String</td>
+<td>'bold'</td>
+</tr>
+<tr>
+<td>vim.easymotionKeys</td>
+<td>The characters used for jump marker name</td>
+<td>String</td>
+<td>'hklyuiopnm,qwertzxcvbasdgjf;'</td>
+</tr>
+<tr>
+<td>vim.easymotionJumpToAnywhereRegex</td>
+<td>Custom regex to match for JumpToAnywhere motion (analogous to <code>Easymotion_re_anywhere</code>)</td>
+<td>String</td>
+<td><code>\b[A-Za-z0-9]\|[A-Za-z0-9]\b\|_.\|#.\|[a-z][A-Z]</code></td>
+</tr>
+</tbody>
+</table>
+<p>Once easymotion is active, initiate motions using the following commands. After you initiate the motion, text decorators/markers will be displayed and you can press the keys displayed to jump to that position. <code>leader</code> is configurable and is <code>\</code> by default.</p>
+<table>
+<thead>
+<tr>
+<th>Motion Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; s &lt;char&gt;</code></td>
+<td>Search character</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; f &lt;char&gt;</code></td>
+<td>Find character forwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; F &lt;char&gt;</code></td>
+<td>Find character backwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; t &lt;char&gt;</code></td>
+<td>Til character forwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; T &lt;char&gt;</code></td>
+<td>Til character backwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; w</code></td>
+<td>Start of word forwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; b</code></td>
+<td>Start of word backwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; l</code></td>
+<td>Matches beginning &amp; ending of word, camelCase, after <code>_</code>, and after <code>#</code> forwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; h</code></td>
+<td>Matches beginning &amp; ending of word, camelCase, after <code>_</code>, and after <code>#</code> backwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; e</code></td>
+<td>End of word forwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; ge</code></td>
+<td>End of word backwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; j</code></td>
+<td>Start of line forwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; k</code></td>
+<td>Start of line backwards</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt; / &lt;char&gt;... &lt;CR&gt;</code></td>
+<td>Search n-character</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt;&lt;leader&gt; bdt</code></td>
+<td>Til character</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt;&lt;leader&gt; bdw</code></td>
+<td>Start of word</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt;&lt;leader&gt; bde</code></td>
+<td>End of word</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt;&lt;leader&gt; bdjk</code></td>
+<td>Start of line</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;&lt;leader&gt;&lt;leader&gt; j</code></td>
+<td>JumpToAnywhere motion; default behavior matches beginning &amp; ending of word, camelCase, after <code>_</code> and after <code>#</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>&lt;leader&gt;&lt;leader&gt; (2s|2f|2F|2t|2T) &lt;char&gt;&lt;char&gt;</code> and <code>&lt;leader&gt;&lt;leader&gt;&lt;leader&gt; bd2t &lt;char&gt;char&gt;</code> are also available.
+The difference is character count required for search.
+For example, <code>&lt;leader&gt;&lt;leader&gt; 2s &lt;char&gt;&lt;char&gt;</code> requires two characters, and search by two characters.
+This mapping is not a standard mapping, so it is recommended to use your custom mapping.</p>
+<h3 id=vim-surround>vim-surround</h3>
+<p>Based on <a href="https://github.com/tpope/vim-surround" target=_blank rel="noreferrer noopener nofollow">surround.vim</a>, the plugin is used to work with surrounding characters like parentheses, brackets, quotes, and XML tags.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim.surround</td>
+<td>Enable/disable vim-surround</td>
+<td>Boolean</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><code>t</code> or <code>&lt;</code> as <code>&lt;desired&gt;</code> or <code>&lt;existing&gt;</code> will enter tag entry mode. Using <code>&lt;CR&gt;</code> instead of <code>&gt;</code> to finish changing a tag will preserve any existing attributes.</p>
+<table>
+<thead>
+<tr>
+<th>Surround Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>y s &lt;motion&gt; &lt;desired&gt;</code></td>
+<td>Add <code>desired</code> surround around text defined by <code>&lt;motion&gt;</code></td>
+</tr>
+<tr>
+<td><code>d s &lt;existing&gt;</code></td>
+<td>Delete <code>existing</code> surround</td>
+</tr>
+<tr>
+<td><code>c s &lt;existing&gt; &lt;desired&gt;</code></td>
+<td>Change <code>existing</code> surround to <code>desired</code></td>
+</tr>
+<tr>
+<td><code>S &lt;desired&gt;</code></td>
+<td>Surround when in visual modes (surrounds full selection)</td>
+</tr>
+</tbody>
+</table>
+<p>Some examples:</p>
+<ul>
+<li><code>&quot;test&quot;</code> with cursor inside quotes type <code>cs&quot;'</code> to end up with <code>'test'</code></li>
+<li><code>&quot;test&quot;</code> with cursor inside quotes type <code>ds&quot;</code> to end up with <code>test</code></li>
+<li><code>&quot;test&quot;</code> with cursor inside quotes type <code>cs&quot;t</code> and enter <code>123&gt;</code> to end up with <code>&lt;123&gt;test&lt;/123&gt;</code></li>
+</ul>
+<h3 id=vim-commentary>vim-commentary</h3>
+<p>Similar to <a href="https://github.com/tpope/vim-commentary" target=_blank rel="noreferrer noopener nofollow">vim-commentary</a>, but uses the VS Code native <em>Toggle Line Comment</em> and <em>Toggle Block Comment</em> features.</p>
+<p>Usage examples:</p>
+<ul>
+<li><code>gc</code> - toggles line comment. For example <code>gcc</code> to toggle line comment for current line and <code>gc2j</code> to toggle line comments for the current line and the next two lines.</li>
+<li><code>gC</code> - toggles block comment. For example <code>gCi)</code> to comment out everything within parentheses.</li>
+</ul>
+<h3 id=vim-indent-object>vim-indent-object</h3>
+<p>Based on <a href="https://github.com/michaeljsmith/vim-indent-object" target=_blank rel="noreferrer noopener nofollow">vim-indent-object</a>, it allows for treating blocks of code at the current indentation level as text objects. Useful in languages that don't use braces around statements (e.g. Python).</p>
+<p>Provided there is a new line between the opening and closing braces / tag, it can be considered an agnostic <code>cib</code>/<code>ci{</code>/<code>ci[</code>/<code>cit</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;operator&gt;ii</code></td>
+<td>This indentation level</td>
+</tr>
+<tr>
+<td><code>&lt;operator&gt;ai</code></td>
+<td>This indentation level and the line above (think <code>if</code> statements in Python)</td>
+</tr>
+<tr>
+<td><code>&lt;operator&gt;aI</code></td>
+<td>This indentation level, the line above, and the line after (think <code>if</code> statements in C/C++/Java/etc)</td>
+</tr>
+</tbody>
+</table>
+<h3 id=vim-sneak>vim-sneak</h3>
+<p>Based on <a href="https://github.com/justinmk/vim-sneak" target=_blank rel="noreferrer noopener nofollow">vim-sneak</a>, it allows for jumping to any location specified by two characters.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim.sneak</td>
+<td>Enable/disable vim-sneak</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>vim.sneakUseIgnorecaseAndSmartcase</td>
+<td>Respect <code>vim.ignorecase</code> and <code>vim.smartcase</code> while sneaking</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Once sneak is active, initiate motions using the following commands. For operators sneak uses <code>z</code> instead of <code>s</code> because <code>s</code> is already taken by the surround plugin.</p>
+<table>
+<thead>
+<tr>
+<th>Motion Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>s&lt;char&gt;&lt;char&gt;</code></td>
+<td>Move forward to the first occurrence of <code>&lt;char&gt;&lt;char&gt;</code></td>
+</tr>
+<tr>
+<td><code>S&lt;char&gt;&lt;char&gt;</code></td>
+<td>Move backward to the first occurrence of <code>&lt;char&gt;&lt;char&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;operator&gt;z&lt;char&gt;&lt;char&gt;</code></td>
+<td>Perform <code>&lt;operator&gt;</code> forward to the first occurrence of <code>&lt;char&gt;&lt;char&gt;</code></td>
+</tr>
+<tr>
+<td><code>&lt;operator&gt;Z&lt;char&gt;&lt;char&gt;</code></td>
+<td>Perform <code>&lt;operator&gt;</code> backward to the first occurrence of <code>&lt;char&gt;&lt;char&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id=camelcasemotion>CamelCaseMotion</h3>
+<p>Based on <a href="https://github.com/bkad/CamelCaseMotion" target=_blank rel="noreferrer noopener nofollow">CamelCaseMotion</a>, though not an exact emulation. This plugin provides an easier way to move through camelCase and snake_case words.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim.camelCaseMotion.enable</td>
+<td>Enable/disable CamelCaseMotion</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Once CamelCaseMotion is enabled, the following motions are available:</p>
+<table>
+<thead>
+<tr>
+<th>Motion Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;leader&gt;w</code></td>
+<td>Move forward to the start of the next camelCase or snake_case word segment</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;e</code></td>
+<td>Move forward to the next end of a camelCase or snake_case word segment</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;b</code></td>
+<td>Move back to the prior beginning of a camelCase or snake_case word segment</td>
+</tr>
+<tr>
+<td><code>&lt;operator&gt;i&lt;leader&gt;w</code></td>
+<td>Select/change/delete/etc. the current camelCase or snake_case word segment</td>
+</tr>
+</tbody>
+</table>
+<p>By default, <code>&lt;leader&gt;</code> is mapped to <code>\</code>, so for example, <code>d2i\w</code> would delete the current and next camelCase word segment.</p>
+<h3 id=input-method>Input Method</h3>
+<p>Disable input method when exiting Insert Mode.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vim.autoSwitchInputMethod.enable</code></td>
+<td>Boolean denoting whether autoSwitchInputMethod is on/off.</td>
+</tr>
+<tr>
+<td><code>vim.autoSwitchInputMethod.defaultIM</code></td>
+<td>Default input method.</td>
+</tr>
+<tr>
+<td><code>vim.autoSwitchInputMethod.obtainIMCmd</code></td>
+<td>The full path to command to retrieve the current input method key.</td>
+</tr>
+<tr>
+<td><code>vim.autoSwitchInputMethod.switchIMCmd</code></td>
+<td>The full path to command to switch input method, with <code>{im}</code> a placeholder for input method key.</td>
+</tr>
+</tbody>
+</table>
+<p>Any third-party program can be used to switch input methods. The following will walkthrough the configuration using <a href="https://github.com/daipeihust/im-select" target=_blank rel="noreferrer noopener nofollow">im-select</a>.</p>
+<ol>
+<li><p>Install im-select (see <a href="https://github.com/daipeihust/im-select#installation" target=_blank rel="noreferrer noopener nofollow">installation guide</a>)</p>
+</li>
+<li><p>Find your default input method key</p>
+<ul>
+<li><p>Mac:</p>
+<p>Switch your input method to English, and run the following in your terminal: <code>/&lt;path-to-im-select-installation&gt;/im-select</code> to output your default input method. The table below lists the common English key layouts for MacOS.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>com.apple.keylayout.US</td>
+<td>U.S.</td>
+</tr>
+<tr>
+<td>com.apple.keylayout.ABC</td>
+<td>ABC</td>
+</tr>
+<tr>
+<td>com.apple.keylayout.British</td>
+<td>British</td>
+</tr>
+<tr>
+<td>com.apple.keylayout.Irish</td>
+<td>Irish</td>
+</tr>
+<tr>
+<td>com.apple.keylayout.Australian</td>
+<td>Australian</td>
+</tr>
+<tr>
+<td>com.apple.keylayout.Dvorak</td>
+<td>Dvorak</td>
+</tr>
+<tr>
+<td>com.apple.keylayout.Colemak</td>
+<td>Colemak</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Windows:</p>
+<p>Refer to the <a href="https://github.com/daipeihust/im-select#to-get-current-keyboard-locale" target=_blank rel="noreferrer noopener nofollow">im-select guide</a> on how to discover your input method key. Generally, if your keyboard layout is en_US the input method key is 1033 (the locale ID of en_US). You can also find your locale ID from <a href="https://www.science.co.il/language/Locale-codes.php" target=_blank rel="noreferrer noopener nofollow">this page</a>, where the <code>LCID Decimal</code> column is the locale ID.</p>
+</li>
+</ul>
+</li>
+<li><p>Configure <code>vim.autoSwitchInputMethod</code>.</p>
+<ul>
+<li><p>MacOS:</p>
+<p>Given the input method key of <code>com.apple.keylayout.US</code> and <code>im-select</code> located at <code>/usr/local/bin</code>. The configuration is:</p>
+<pre><code class=language-json>&quot;vim.autoSwitchInputMethod.enable&quot;: true,
+&quot;vim.autoSwitchInputMethod.defaultIM&quot;: &quot;com.apple.keylayout.US&quot;,
+&quot;vim.autoSwitchInputMethod.obtainIMCmd&quot;: &quot;/usr/local/bin/im-select&quot;,
+&quot;vim.autoSwitchInputMethod.switchIMCmd&quot;: &quot;/usr/local/bin/im-select {im}&quot;
+</code></pre>
+</li>
+<li><p>Windows:</p>
+<p>Given the input method key of <code>1033</code> (en_US) and <code>im-select.exe</code> located at <code>D:/bin</code>. The configuration is:</p>
+<pre><code class=language-json>&quot;vim.autoSwitchInputMethod.enable&quot;: true,
+&quot;vim.autoSwitchInputMethod.defaultIM&quot;: &quot;1033&quot;,
+&quot;vim.autoSwitchInputMethod.obtainIMCmd&quot;: &quot;D:\\bin\\im-select.exe&quot;,
+&quot;vim.autoSwitchInputMethod.switchIMCmd&quot;: &quot;D:\\bin\\im-select.exe {im}&quot;
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<p>The <code>{im}</code> argument above is a command-line option that will be passed to <code>im-select</code> denoting the input method to switch to. If using an alternative program to switch input methods, you should add a similar option to the configuration. For example, if the program's usage is <code>my-program -s imKey</code> to switch input method, the <code>vim.autoSwitchInputMethod.switchIMCmd</code> should be <code>/path/to/my-program -s {im}</code>.</p>
+<h3 id=replacewithregister>ReplaceWithRegister</h3>
+<p>Based on <a href="https://github.com/vim-scripts/ReplaceWithRegister" target=_blank rel="noreferrer noopener nofollow">ReplaceWithRegister</a>, an easy way to replace existing text with the contents of a register.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim.replaceWithRegister</td>
+<td>Enable/disable ReplaceWithRegister</td>
+<td>Boolean</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p>Once active, type <code>gr</code> (say &quot;go replace&quot;) followed by a motion to describe the text you want replaced by the contents of the register.</p>
+<table>
+<thead>
+<tr>
+<th>Motion Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[count][&quot;a]gr&lt;motion&gt;</code></td>
+<td>Replace the text described by the motion with the contents of the specified register</td>
+</tr>
+<tr>
+<td><code>[count][&quot;a]grr</code></td>
+<td>Replace the [count] lines or current line with the contents of the specified register</td>
+</tr>
+<tr>
+<td><code>{Visual}[&quot;a]gr</code></td>
+<td>Replace the selection with the contents of the specified register</td>
+</tr>
+</tbody>
+</table>
+<h3 id=vim-textobj-entire>vim-textobj-entire</h3>
+<p>Similar to <a href="https://github.com/kana/vim-textobj-entire" target=_blank rel="noreferrer noopener nofollow">vim-textobj-entire</a>.</p>
+<p>Adds two useful text-objects:</p>
+<ul>
+<li><code>ae</code> which represents the entire content of a buffer.</li>
+<li><code>ie</code> which represents the entire content of a buffer without the leading and trailing spaces.</li>
+</ul>
+<p>Usage examples:</p>
+<ul>
+<li><code>dae</code> - delete the whole buffer content.</li>
+<li><code>yie</code> - will yank the buffer content except leading and trailing blank lines.</li>
+<li><code>gUae</code> - transform the whole buffer to uppercase.</li>
+</ul>
+<h3 id=vim-textobj-arguments>vim-textobj-arguments</h3>
+<p>Similar to the argument text object in <a href="https://github.com/wellle/targets.vim" target=_blank rel="noreferrer noopener nofollow">targets.vim</a>. It is an easy way to deal with arguments inside functions in most programming languages.</p>
+<table>
+<thead>
+<tr>
+<th>Motion Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;operator&gt;ia</code></td>
+<td>The argument excluding separators.</td>
+</tr>
+<tr>
+<td><code>&lt;operator&gt;aa</code></td>
+<td>The argument including separators.</td>
+</tr>
+</tbody>
+</table>
+<p>Usage examples:</p>
+<ul>
+<li><code>cia</code> - change the argument under the cursor while preserving separators like comma <code>,</code>.</li>
+<li><code>daa</code> - will delete the whole argument under the cursor and the separators if applicable.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vim.argumentObjectOpeningDelimiters</td>
+<td>A list of opening delimiters</td>
+<td>String list</td>
+<td>[&quot;(&quot;, &quot;[&quot;]</td>
+</tr>
+<tr>
+<td>vim.argumentObjectClosingDelimiters</td>
+<td>A list of closing delimiters</td>
+<td>String list</td>
+<td>[&quot;)&quot;, &quot;]&quot;]</td>
+</tr>
+<tr>
+<td>vim.argumentObjectSeparators</td>
+<td>A list of object separators</td>
+<td>String list</td>
+<td>[&quot;,&quot;]</td>
+</tr>
+</tbody>
+</table>
+<h2 id=vscodevim-tricks>&#127913; VSCodeVim tricks!</h2>
+<p>VS Code has a lot of nifty tricks and we try to preserve some of them:</p>
+<ul>
+<li><code>gd</code> - jump to definition.</li>
+<li><code>gq</code> - on a visual selection reflow and wordwrap blocks of text, preserving commenting style. Great for formatting documentation comments.</li>
+<li><code>gb</code> - adds another cursor on the next word it finds which is the same as the word under the cursor.</li>
+<li><code>af</code> - visual mode command which selects increasingly large blocks of text. For example, if you had &quot;blah (foo [bar 'ba|z'])&quot; then it would select 'baz' first. If you pressed <code>af</code> again, it'd then select [bar 'baz'], and if you did it a third time it would select &quot;(foo [bar 'baz'])&quot;.</li>
+<li><code>gh</code> - equivalent to hovering your mouse over wherever the cursor is. Handy for seeing types and error messages without reaching for the mouse!</li>
+</ul>
+<h2 id=f.a.q>&#128218; F.A.Q.</h2>
+<ul>
+<li><p>None of the native Visual Studio Code <code>ctrl</code> (e.g. <code>ctrl+f</code>, <code>ctrl+v</code>) commands work</p>
+<p>Set the <a href="#vscodevim-settings" rel="noreferrer noopener nofollow"><code>useCtrlKeys</code> setting</a> to <code>false</code>.</p>
+</li>
+<li><p>Moving <code>j</code>/<code>k</code> over folds opens up the folds</p>
+<p>Try setting <code>vim.foldfix</code> to <code>true</code>. This is a hack; it works fine, but there are side effects (see <a href="https://github.com/Microsoft/vscode/issues/22276" target=_blank rel="noreferrer noopener nofollow">issue#22276</a>).</p>
+</li>
+<li><p>Key repeat doesn't work</p>
+<p>Are you on a Mac? Did you go through our <a href="#mac" rel="noreferrer noopener nofollow">mac-setup</a> instructions?</p>
+</li>
+<li><p>There are annoying intellisense/notifications/popups that I can't close with <code>&lt;esc&gt;</code>! Or I'm in a snippet and I want to close intellisense</p>
+<p>Press <code>shift+&lt;esc&gt;</code> to close all of those boxes.</p>
+</li>
+<li><p>How can I use the commandline when in Zen mode or when the status bar is disabled?</p>
+<p>This extension exposes a remappable command to show a VS Code style quick-pick version of the commandline, with more limited functionality. This can be remapped as follows in VS Code's keybindings.json settings file.</p>
+<pre><code class=language-json>{
+  &quot;key&quot;: &quot;shift+;&quot;,
+  &quot;command&quot;: &quot;vim.showQuickpickCmdLine&quot;,
+  &quot;when&quot;: &quot;editorTextFocus &amp;&amp; vim.mode != 'Insert'&quot;
+}
+</code></pre>
+<p>Or for Zen mode only:</p>
+<pre><code class=language-json>{
+  &quot;key&quot;: &quot;shift+;&quot;,
+  &quot;command&quot;: &quot;vim.showQuickpickCmdLine&quot;,
+  &quot;when&quot;: &quot;inZenMode &amp;&amp; vim.mode != 'Insert'&quot;
+}
+</code></pre>
+</li>
+<li><p>How can I move the cursor by each display line with word wrapping?</p>
+<p>If you have word wrap on and would like the cursor to enter each wrapped line when using j, k, ↓ or ↑, set the following in VS Code's keybindings.json settings file.</p>
+
+<pre><code class=language-json>{
+  &quot;key&quot;: &quot;up&quot;,
+  &quot;command&quot;: &quot;cursorUp&quot;,
+  &quot;when&quot;: &quot;editorTextFocus &amp;&amp; vim.active &amp;&amp; !inDebugRepl &amp;&amp; !suggestWidgetMultipleSuggestions &amp;&amp; !suggestWidgetVisible&quot;
+},
+{
+  &quot;key&quot;: &quot;down&quot;,
+  &quot;command&quot;: &quot;cursorDown&quot;,
+  &quot;when&quot;: &quot;editorTextFocus &amp;&amp; vim.active &amp;&amp; !inDebugRepl &amp;&amp; !suggestWidgetMultipleSuggestions &amp;&amp; !suggestWidgetVisible&quot;
+},
+{
+  &quot;key&quot;: &quot;k&quot;,
+  &quot;command&quot;: &quot;cursorUp&quot;,
+  &quot;when&quot;: &quot;editorTextFocus &amp;&amp; vim.active &amp;&amp; !inDebugRepl &amp;&amp; vim.mode == 'Normal' &amp;&amp; !suggestWidgetMultipleSuggestions &amp;&amp; !suggestWidgetVisible&quot;
+},
+{
+  &quot;key&quot;: &quot;j&quot;,
+  &quot;command&quot;: &quot;cursorDown&quot;,
+  &quot;when&quot;: &quot;editorTextFocus &amp;&amp; vim.active &amp;&amp; !inDebugRepl &amp;&amp; vim.mode == 'Normal' &amp;&amp; !suggestWidgetMultipleSuggestions &amp;&amp; !suggestWidgetVisible&quot;
+}
+</code></pre>
+<p><strong>Caveats:</strong> This solution restores the default VS Code behavior for the j and k keys, so motions like <code>10j</code> <a href="https://github.com/VSCodeVim/Vim/pull/3623#issuecomment-481473981" target=_blank rel="noreferrer noopener nofollow">will not work</a>. If you need these motions to work, <a href="https://github.com/VSCodeVim/Vim/issues/2924#issuecomment-476121848" target=_blank rel="noreferrer noopener nofollow">other, less performant options exist</a>.</p>
+</li>
+<li><p>I've swapped Escape and Caps Lock with setxkbmap and VSCodeVim isn't respecting the swap</p>
+<p>This is a <a href="https://github.com/microsoft/vscode/issues/23991" target=_blank rel="noreferrer noopener nofollow">known issue in VS Code</a>, as a workaround you can set <code>&quot;keyboard.dispatch&quot;: &quot;keyCode&quot;</code> and restart VS Code.</p>
+</li>
+<li><p>VSCodeVim is too slow!</p>
+<p>You can try adding the following <a href="https://github.com/microsoft/vscode/issues/75627#issuecomment-1078827311" target=_blank rel="noreferrer noopener nofollow">setting</a>, and reload/restart VSCode:</p>
+<pre><code class=language-json>&quot;extensions.experimental.affinity&quot;: {
+  &quot;vscodevim.vim&quot;: 1
+}
+</code></pre>
+<p><strong>Caveats:</strong> One issue with using the affinity setting is that each time you update your settings file, the Vim plugin will reload, which can take a few seconds.</p>
+</li>
+</ul>
+<h2 id=contributing>❤️ Contributing</h2>
+<p>This project is maintained by a group of awesome <a href="https://github.com/VSCodeVim/Vim/graphs/contributors" target=_blank rel="noreferrer noopener nofollow">people</a> and contributions are extremely welcome :heart:. For a quick tutorial on how you can help, see our <a href="https://github.com/VSCodeVim/Vim/blob/HEAD/.github/CONTRIBUTING.md" target=_blank rel="noreferrer noopener nofollow">contributing guide</a>.</p>
+<p><a href="https://www.buymeacoffee.com/jasonpoon" target=_blank><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Us A Coffee" style="height:auto !important;width:auto !important;"></a></p>
+<h3 id=special-shoutouts-to>Special shoutouts to:</h3>
+<ul>
+<li>Thanks to @xconverge for making over 100 commits to the repo. If you're wondering why your least favorite bug packed up and left, it was probably him.</li>
+<li>Thanks to @Metamist for implementing EasyMotion!</li>
+<li>Thanks to @sectioneight for implementing text objects!</li>
+<li>Special props to <a href="http://kevincoleman.io" target=_blank rel="noreferrer noopener nofollow">Kevin Coleman</a>, who created our awesome logo!</li>
+<li>Shoutout to @chillee aka Horace He for his contributions and hard work.</li>
+</ul>
+</div></div></td><td class="ux-itemdetails-right" role="complementary"><div class="screenshot-carousel-container"></div><div class="loader-container"><div class="loader"></div></div><div class="itemDetails-right"></div></td></tr></tbody></table></div></div><div id="versionHistoryTab" style="display:none"><div class="versionHistoryTab-loader-container"><div class="loader"></div></div><div id="version-history-tab-content"></div></div></div></div></div></div></div></div></div></div><div id="gallery-footer"><footer><div id="ux-footer" class="ltr" role="contentinfo"><div id="baseFooter"><div id="Fragment_BaseFooterLinks"><div class="linkList"><ul class="links horizontal"><li><a href="https://www.visualstudio.com/support/support-overview-vs" data-mscc-ic="false">Contact us</a></li><li><a href="https://careers.microsoft.com/" data-mscc-ic="false">Jobs</a></li><li><a href="https://go.microsoft.com/fwlink/?LinkID=521839" data-mscc-ic="false">Privacy</a></li><li><a id="mgtConsentCookie" data-mscc-ic="false">Manage cookies</a></li><li><a href="https://aka.ms/vsmarketplace-ToU" data-mscc-ic="false">Terms of use</a></li><li><a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-mscc-ic="false">Trademarks</a></li></ul></div></div><div id="rightBaseFooter">©<!-- --> 2024 Microsoft<span class="microsoftLogo" title="Microsoft"></span></div><div class="clear"></div></div></div></footer></div></div></div></div>
+    
+    <div class="render-time">
+        <script class="server-side-render" defer="defer" type="application/json">4</script>
+    </div>
+    <div class="rhs-content">
+        <script class="jiContent" defer="defer" type="application/json">{"GitHubLink":"https://github.com/VSCodeVim/Vim.git","ReleaseDateString":"Sun, 29 Nov 2015 10:38:55 GMT","LastUpdatedDateString":"Thu, 05 Dec 2024 00:57:19 GMT","GalleryUrl":"/","Categories":["Keymaps"],"Tags":["__ext_vim","__ext_vimrc","__web_extension","keybindings","vi","vim","Vimscript","vscodevim"],"ExtensionProperties":{"Microsoft.VisualStudio.Services.Branding.Color":"#e3f4ff","Microsoft.VisualStudio.Services.Branding.Theme":"light","Microsoft.VisualStudio.Services.Links.Getstarted":"https://github.com/VSCodeVim/Vim.git","Microsoft.VisualStudio.Services.Links.Support":"https://github.com/VSCodeVim/Vim/issues","Microsoft.VisualStudio.Services.Links.Learn":"https://github.com/VSCodeVim/Vim","Microsoft.VisualStudio.Services.Links.Source":"https://github.com/VSCodeVim/Vim.git","Microsoft.VisualStudio.Services.Links.GitHub":"https://github.com/VSCodeVim/Vim.git","Microsoft.VisualStudio.Code.Engine":"^1.74.0","Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown":"true","Microsoft.VisualStudio.Code.ExtensionDependencies":"","Microsoft.VisualStudio.Services.CustomerQnALink":"https://vscodevim.herokuapp.com/","Microsoft.VisualStudio.Code.ExtensionPack":"","Microsoft.VisualStudio.Code.LocalizedLanguages":"","Microsoft.VisualStudio.Code.ExtensionKind":"ui,web","Microsoft.VisualStudio.Services.Content.Pricing":"Free"},"Resources":{"LicenseText":"License","ChangelogText":"Changelog","PublisherName":"vscodevim","ExtensionName":"vim","Version":"1.29.0"},"MoreInfo":{"VersionValue":"1.29.0","PublisherValue":"vscodevim","UniqueIdentifierValue":"vscodevim.vim","TwitterShareContents":"Just%20discovered%20this%20on%20the%20%23VSMarketplace%3A%20https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dvscodevim.vim","EmailShareContents":"Hi%2C%20Just%20discovered%20this%20extension%20on%20the%20%23VSMarketplace%20that%20may%20be%20of%20interest%20to%20you.%20Check%20it%20out%20%40%20https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dvscodevim.vim%20%21","EmailShareSubject":"Check%20out%20-%20Vim%20for%20Visual%20Studio%20Code","IsPublic":true},"ResourcesPath":"https://cdn.vsassets.io/v/M246_20241014.9/_content/","AssetUri":"https://vscodevim.gallerycdn.vsassets.io/extensions/vscodevim/vim/1.29.0/1733360064585","VsixManifestAssetType":"Microsoft.VisualStudio.Services.VsixManifest","StaticResourceVersion":"M246_20241014.9","AfdIdentifier":"Ref A: 619293DEA98943C1BB646424118F95AA Ref B: LAX311000114049 Ref C: 2024-12-23T09:36:47Z","VsixId":null,"WorksWith":["Universal, Web"],"ItemType":3,"IsMDPruned":false,"PrunedMDLength":0,"OverviewMDLength":61063,"IsRHSAsyncComponentsEnabled":true,"OfferDetails":null,"IsDetailsTabsEnabled":false,"ShowVersionHistory":true,"IsSeeMoreButtonOnVersionHistoryTab":false,"DisableVSCodeDownloadButtonEnabled":false,"IsReferralLinkRedirectionWarningPopupEnabled":true,"Versions":[{"version":"1.29.0","lastUpdated":"Thu, 05 Dec 2024 00:57:19 GMT","targetPlatform":null},{"version":"1.28.1","lastUpdated":"Sat, 07 Sep 2024 16:46:04 GMT","targetPlatform":null},{"version":"1.28.0","lastUpdated":"Mon, 26 Aug 2024 03:51:16 GMT","targetPlatform":null},{"version":"1.27.3","lastUpdated":"Tue, 21 May 2024 01:14:43 GMT","targetPlatform":null},{"version":"1.27.2","lastUpdated":"Sat, 23 Dec 2023 02:00:25 GMT","targetPlatform":null}],"IsCSRFeatureEnabled":false,"TargetPlatforms":{"win32-x64":"Windows x64","win32-arm64":"Windows ARM","linux-x64":"Linux x64","linux-arm64":"Linux ARM64","linux-armhf":"Linux ARM32","darwin-x64":"macOS Intel","darwin-arm64":"macOS Apple Silicon","alpine-x64":"Alpine Linux 64 bit","web":"Web","alpine-arm64":"Alpine Linux ARM64","win32-ia32":"Windows ia32"}}</script>
+    </div>
+    <div class="csp-user">
+        <script class="is-csp-user" defer="defer" type="application/json">false</script>
+    </div>
+    
+
+    <script type="text/javascript"  nonce="dFwHZAwJAvpTWGnDCl9tHQ==">
+        if (document) {
+            try {
+                if (window.performance && window.performance.timing) {
+                    window["marketplaceRenderTime"] = Date.now() - window.performance.timing.navigationStart;
+                }
+            }
+            catch(e){ }
+        }
+    </script>
+    <script type="text/javascript" nonce="dFwHZAwJAvpTWGnDCl9tHQ=="> var __vssPageContext = {"webContext":{"user":{"id":"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa","name":"Anonymous","email":"","uniqueName":"TEAM FOUNDATION\\Anonymous"},"host":{"id":"2663b13f-50e3-a655-a159-22f6f4725fab","name":"TEAM FOUNDATION","uri":"https://marketplace.visualstudio.com/","relativeUri":"/","hostType":"deployment","scheme":"https","authority":"marketplace.visualstudio.com"}},"moduleLoaderConfig":{"baseUrl":"https://cdn.vsassets.io/v/M246_20241014.9/_scripts/TFS/min/","paths":{"Engagement/Resources":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/en-US","ContentRendering/Resources":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/en-US","VSS/Resources":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/en-US","Charts/Resources":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/en-US","Gallery/Scripts/Gallery/Resources":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/en-US","VSSPreview/Resources":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/en-US","highcharts":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts.v11.4.6","highcharts/highcharts-more":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-more.v11.4.6","highcharts/modules/accessibility":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-accessibility.v11.4.6","highcharts/modules/funnel":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-funnel.v11.4.6","highcharts/modules/heatmap":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-heatmap.v11.4.6"},"map":{"*":{"office-ui-fabric-react/lib":"OfficeFabric"}},"contributionPaths":{"VSS":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/VSS","pathType":"default"},"VSS/Resources":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/en-US","pathType":"resource"},"q":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/q","pathType":"default"},"knockout":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/knockout","pathType":"default"},"mousetrap":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/mousetrap","pathType":"default"},"mustache":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/mustache","pathType":"default"},"react":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/react.15.3","pathType":"default"},"react-dom":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/react-dom.15.3","pathType":"default"},"react-transition-group":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/react-transition-group.15.3","pathType":"default"},"jQueryUI":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/jQueryUI","pathType":"default"},"jquery":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/jquery","pathType":"default"},"OfficeFabric":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/OfficeFabric","pathType":"default"},"tslib":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/tslib","pathType":"default"},"@uifabric":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/@uifabric","pathType":"default"},"VSSUI":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/VSSUI","pathType":"default"},"ContentRendering":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/ContentRendering","pathType":"default"},"ContentRendering/Resources":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/en-US","pathType":"resource"},"Charts":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/Charts","pathType":"default"},"Charts/Resources":{"value":"/_static/tfs/M246_20241014.9/_scripts/TFS/min/en-US","pathType":"resource"},"highcharts":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts.v11.4.6","pathType":"thirdParty"},"highcharts/highcharts-more":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-more.v11.4.6","pathType":"thirdParty"},"highcharts/modules/accessibility":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-accessibility.v11.4.6","pathType":"thirdParty"},"highcharts/modules/funnel":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-funnel.v11.4.6","pathType":"thirdParty"},"highcharts/modules/heatmap":{"value":"https://cdn.vsassets.io/3rdParty/_scripts/highcharts-heatmap.v11.4.6","pathType":"thirdParty"}},"shim":{"jquery":{"deps":[],"exports":"jQuery"}},"waitSeconds":30},"coreReferences":{"stylesheets":[{"url":"/_static/tfs/M246_20241014.9/_cssbundles/Default/vss-bundle-ext-core-css-vdl6C9oqaY8jIYGt0fSVzQfhTlc3U3sLKE8T0mcZwW_0=","highContrastUrl":null,"isCoreStylesheet":true}],"scripts":[{"identifier":"JQuery","url":"https://cdn.vsassets.io/3rdParty/_scripts/jquery-3.6.0.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"JQueryXDomain","url":"https://cdn.vsassets.io/3rdParty/_scripts/jquery.xdomainrequest.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"Promise","url":"https://cdn.vsassets.io/v/M246_20241014.9/_scripts/TFS/min/promise.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"GlobalScripts","url":"https://cdn.vsassets.io/v/M246_20241014.9/_scripts/TFS/min/global-scripts.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"LoaderFixes","url":"https://cdn.vsassets.io/v/M246_20241014.9/_scripts/TFS/pre-loader-shim.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":false},{"identifier":"AMDLoader","url":"https://cdn.vsassets.io/3rdParty/_scripts/require.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},{"identifier":"LoaderFixes","url":"https://cdn.vsassets.io/v/M246_20241014.9/_scripts/TFS/post-loader-shim.min.js","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":false}],"coreScriptsBundle":{"identifier":"CoreBundle","url":"/_public/_Bundling/Content?bundle=vss-bundle-basejs-vx38JYf0FTtFkI9k88H54KYCLs9sIP_6xJwgWGnd-xvw=","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true},"extensionCoreReferences":{"identifier":"CoreBundle","url":"/_public/_Bundling/Content?bundle=vss-bundle-ext-core-vMBsClfE1T0nfPIDiyalotBEmU2f35Umsz6q07K4-aKI=","fallbackUrl":null,"fallbackCondition":null,"isCoreModule":true}},"webAccessConfiguration":{"isHosted":true,"paths":{"rootPath":"/","staticContentRootPath":"/","staticContentVersion":"M246_20241014.9","resourcesPath":"https://cdn.vsassets.io/v/M246_20241014.9/_content/","staticRootTfs":"https://cdn.vsassets.io/v/M246_20241014.9/","cdnFallbackStaticRootTfs":"/_static/tfs/M246_20241014.9/","staticRoot3rdParty":"https://cdn.vsassets.io/3rdParty/"},"api":{"webApiVersion":"1","areaPrefix":"_","controllerPrefix":"_"},"mailSettings":{"enabled":false},"registryItems":{}},"microsoftAjaxConfig":{"cultureInfo":{"name":"en-US","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"$","NaNSymbol":"NaN","CurrencyNegativePattern":0,"NumberNegativePattern":1,"PercentPositivePattern":1,"PercentNegativePattern":1,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"0001-01-01T00:00:00","MaxSupportedDateTime":"9999-12-31T23:59:59.9999999","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2049,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"dddd, MMMM d, yyyy h:mm:ss tt","LongDatePattern":"dddd, MMMM d, yyyy","LongTimePattern":"h:mm:ss tt","MonthDayPattern":"MMMM d","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH':'mm':'ss 'GMT'","ShortDatePattern":"M/d/yyyy","ShortTimePattern":"h:mm tt","SortableDateTimePattern":"yyyy'-'MM'-'dd'T'HH':'mm':'ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy'-'MM'-'dd HH':'mm':'ss'Z'","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]},"numberShortForm":{"QuantitySymbols":["K","M","B"],"NumberGroupSize":1000,"ThousandSymbol":"K"},"eras":null}},"timeZonesConfiguration":{},"featureAvailability":{"featureStates":{"VisualStudio.Services.Contribution.EnableOnPremUnsecureBrowsers":false,"VisualStudio.Service.WebPlatform.ClientErrorReporting":true,"Microsoft.VisualStudio.Services.Gallery.Client.UseCdnAssetUri":false,"VisualStudio.Services.WebAccess.SubresourceIntegrity":false,"VisualStudio.Services.IdentityPicker.ReactProfileCard":true}},"appInsightsConfiguration":{"enabled":false,"instrumentationKey":"00000000-0000-0000-0000-000000000000","insightsScriptUrl":null},"diagnostics":{"sessionId":"b58457ae-2a35-4966-b0dc-8861dad1bbd9","activityId":"b58457ae-2a35-4966-b0dc-8861dad1bbd9","bundlingEnabled":true,"cdnAvailable":true,"cdnEnabled":true,"webPlatformVersion":"M246","serviceVersion":"Dev19.M246.1 (build: AzureDevOps_M246_20241014.9)"},"navigation":{"topMostLevel":"deployment","area":"","currentController":"Gallery","currentAction":"Details","commandName":"Gallery.Details","routeId":"ms.vss-gallery-web.gallery-route-details","routeTemplates":["items"],"routeValues":{"controller":"Gallery","action":"Details"}},"globalization":{"explicitTheme":"","theme":"Default","culture":"en-US","timezoneOffset":0,"timeZoneId":"UTC"},"serviceInstanceId":"00000029-0000-8888-8000-000000000000","hubsContext":{},"serviceLocations":{"locations":{"951917ac-a960-4999-8464-e3f0aa25b381":{"Application":"https://app.vssps.visualstudio.com/","Deployment":"https://app.vssps.visualstudio.com/"}}}};</script> <script defer="true" data-bundlelength="127542" data-bundlename="basejs" nonce="dFwHZAwJAvpTWGnDCl9tHQ=="  src="/_public/_Bundling/Content?bundle=vss-bundle-basejs-vx38JYf0FTtFkI9k88H54KYCLs9sIP_6xJwgWGnd-xvw="  type="text/javascript"></script>
+    <script defer="true" data-bundlelength="227227" data-bundlename="common" data-includedscripts="VSS/Bundling" nonce="dFwHZAwJAvpTWGnDCl9tHQ=="  src="/_public/_Bundling/Content?bundle=vss-bundle-common-vqskrZmqV9Y8Ba3TvxfO3_AsqhD5HzEWWv45nA_svAXw="  type="text/javascript"></script><script defer="true" data-bundlelength="2207075" data-bundlename="view" data-includedscripts="Gallery/Client/Pages/VSSItemDetailsSSR/VSSItemDetailsSSRAsync" nonce="dFwHZAwJAvpTWGnDCl9tHQ=="  src="/_public/_Bundling/Content?bundle=vss-bundle-view-vmFtcW7cNoIAueCOi84qKkeo6ZczEDj5sv-kq78U2GjE="  type="text/javascript"></script>
+    <script defer=true  nonce="dFwHZAwJAvpTWGnDCl9tHQ==" src="/_static/tfs/M246_20241014.9/_scripts/TFS/min/Gallery/Client/Pages/VSSItemDetailsSSR/SSRModuleWrappers.js"></script>
+    <script  nonce="dFwHZAwJAvpTWGnDCl9tHQ==" src="/_static/tfs/M246_20241014.9/_scripts/TFS/min/Gallery/Client/Common/ManageCookieDrop.js"></script>
+</body>
+
+</html>
